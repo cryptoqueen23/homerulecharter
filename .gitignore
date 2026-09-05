@@ -1,0 +1,11 @@
+# Private research. Static hosting serves every file in the repo, so anything
+# here would be publicly readable if committed. Keep it out.
+research-private/
+
+# Local archived source copies can be large and may carry licensing limits.
+# Track them deliberately, not by accident.
+data/sources/archive/
+
+.DS_Store
+Thumbs.db
+node_modules/

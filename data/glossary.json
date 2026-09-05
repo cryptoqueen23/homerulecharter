@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "terms": {
+    "home rule": "A city of more than 5,000 people in Texas may adopt its own charter by a vote of its residents. That charter, rather than general state law alone, sets how the city governs itself. Copperas Cove is a home rule city.",
+    "general law city": "A Texas city that has not adopted its own charter. It may only do what state law specifically allows. The opposite of a home rule city.",
+    "charter": "The city's founding document. It works somewhat like a local constitution, setting the powers of the council, the mayor, the city manager and residents.",
+    "charter amendment": "A change to the charter. In Texas it takes a majority of the voters who vote at an election held for that purpose.",
+    "ordinance": "A local law passed by the city council. It carries penalties and stays in effect until repealed.",
+    "resolution": "A formal statement or decision by the council. Generally used for administrative matters and does not carry the force of a local law the way an ordinance does.",
+    "quorum": "The minimum number of members who must be present for a body to legally conduct business.",
+    "canvass": "The official process of reviewing and certifying election results. The canvass, not election-night reporting, is the authoritative record of what passed.",
+    "initiative": "A petition process letting residents put a proposed ordinance on the ballot.",
+    "referendum": "A petition process letting residents force a public vote on an ordinance the council already passed.",
+    "recall": "A petition process letting residents force an election on removing an elected official before the end of their term.",
+    "forfeiture of office": "Losing a seat automatically or by hearing for violating a condition in the charter, such as missing too many meetings. Different from recall, because residents do not vote on it.",
+    "bond": "Money borrowed by the city, repaid over years with interest.",
+    "general obligation bond": "Borrowing generally repaid using tax-supported revenue. Depending on the legal structure, some general obligation debt requires voter approval.",
+    "certificate of obligation": "A borrowing method available to Texas cities that in many cases does not require a bond election, though it carries notice requirements and a petition right for residents. Legal requirements vary and should be checked against the current statute.",
+    "revenue bond": "Borrowing repaid from the revenue of a specific city system, such as water or sewer, rather than from general taxes.",
+    "refunding bond": "New borrowing issued to pay off older borrowing, usually to lower the interest cost.",
+    "debt service": "The annual cost of paying back what the city has borrowed, principal plus interest.",
+    "tax rate": "The rate applied to property value to fund the city. Texas law sets thresholds above which an increase may require voter approval.",
+    "city manager": "The appointed chief administrator who runs city departments day to day. Not elected. Appointed by and serving under the council.",
+    "council-manager government": "A structure where residents elect a council, and the council appoints a professional manager to run daily operations.",
+    "public information request": "A request under the Texas Public Information Act for records held by a government body.",
+    "open meetings": "The Texas Open Meetings Act requires most government business to be conducted in meetings open to the public, with posted notice."
+  }
+}

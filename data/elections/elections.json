@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "records": [
+    {
+      "election_id": "2023-11-07",
+      "date": "2023-11-07",
+      "display_date": "November 7, 2023",
+      "type": "General election",
+      "origin": "Charter review committee proposals placed on the ballot by the City Council",
+      "propositions": 5,
+      "summary": "Five charter propositions. Four passed. The mayor and council pay increase failed with a reported 1,393 against and 960 for.",
+      "ordinance_number": null,
+      "canvass_status": "RESEARCH_NEEDED",
+      "sources": ["src-kdh-2023-ballot", "src-kdh-2023-results"],
+      "verification_status": "PARTIALLY_VERIFIED"
+    },
+    {
+      "election_id": "2021-11-02",
+      "date": "2021-11-02",
+      "display_date": "November 2, 2021",
+      "type": "General election",
+      "origin": "Charter Review Committee seated April 2020, first met July 2020 and monthly through December 2020. Public hearing July 20, 2021. Council called the election August 3, 2021.",
+      "propositions": 13,
+      "summary": "Thirteen charter amendments, Measures A through M. Only the outcome of Measure B is currently sourced, and only through later news coverage.",
+      "ordinance_number": null,
+      "canvass_status": "RESEARCH_NEEDED",
+      "sources": ["src-clp-2021-thirteen", "src-kdh-2021-earlyvote", "src-kdh-2021-canvass"],
+      "verification_status": "PARTIALLY_VERIFIED"
+    },
+    {
+      "election_id": "2018-11",
+      "date": "2018-11",
+      "display_date": "November 2018",
+      "type": "General election",
+      "origin": "Not yet determined",
+      "propositions": null,
+      "summary": "Reported as the last charter amendment before 2021. No measure list, ballot language or results located.",
+      "ordinance_number": null,
+      "canvass_status": "RESEARCH_NEEDED",
+      "sources": ["src-clp-2021-thirteen"],
+      "verification_status": "RESEARCH_NEEDED"
+    },
+    {
+      "election_id": "charter-adoption",
+      "date": null,
+      "display_date": "Adoption date not yet verified",
+      "type": "Charter adoption",
+      "origin": "Unknown",
+      "propositions": null,
+      "summary": "The date Copperas Cove voters adopted the original home rule charter has not been located online. A 1979 date is sometimes cited informally and is NOT treated as verified here. The certified copy filed with the Texas Secretary of State is the record that settles it.",
+      "ordinance_number": null,
+      "canvass_status": "RESEARCH_NEEDED",
+      "sources": ["src-tsl-charters"],
+      "verification_status": "RESEARCH_NEEDED"
+    }
+  ]
+}

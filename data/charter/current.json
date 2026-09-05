@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "note": "Current charter sections. This file is intentionally near-empty. It must only ever contain text transcribed from the official charter. Never paraphrase into this file, and never populate it from news coverage. Sections referenced by amendment records are stubbed here with status RESEARCH_NEEDED so the gap is visible on the site.",
+  "charter_adopted": null,
+  "charter_adopted_status": "RESEARCH_NEEDED",
+  "charter_adopted_note": "A 1979 adoption date is sometimes cited informally. It is not treated as verified and is not displayed as fact anywhere on this site until the certified charter is obtained.",
+  "source": "src-municode-charter",
+  "articles": [
+    { "article": "IV", "name": "Administrative Service", "status": "PARTIALLY_VERIFIED", "note": "Confirmed to exist from the Municode node identifier. Contents not transcribed." }
+  ],
+  "sections": [
+    { "section": "2.09", "article": null, "name": "Meetings of the Council", "text": null, "status": "RESEARCH_NEEDED", "referenced_by": ["2021-D"] },
+    { "section": "3.03", "article": null, "name": "Official Ballots", "text": null, "status": "RESEARCH_NEEDED", "referenced_by": ["2021-E"] },
+    { "section": "3.04", "article": null, "name": "Elections", "text": null, "status": "RESEARCH_NEEDED", "referenced_by": ["2021-E"] },
+    { "section": "4.05", "article": "IV", "name": "City Secretary", "text": null, "status": "RESEARCH_NEEDED", "referenced_by": [] },
+    { "section": "8.03", "article": null, "name": "Name not yet obtained", "text": null, "status": "RESEARCH_NEEDED", "referenced_by": ["2021-G"] },
+    { "section": "10.09", "article": null, "name": "Submission of Annual Reports", "text": null, "status": "RESEARCH_NEEDED", "referenced_by": ["2021-E"] },
+    { "section": "11.02", "article": null, "name": "Conflict of Interest", "text": null, "status": "RESEARCH_NEEDED", "referenced_by": ["2021-M"] },
+    { "section": "11.05", "article": null, "name": "Employee Relations", "text": null, "status": "RESEARCH_NEEDED", "referenced_by": ["2021-D"] },
+    { "section": "11.06", "article": null, "name": "Damage Suits", "text": null, "status": "RESEARCH_NEEDED", "referenced_by": ["2021-D"] },
+    { "section": "11.11", "article": null, "name": "Assignment, Execution and Garnishment", "text": null, "status": "RESEARCH_NEEDED", "referenced_by": ["2021-D"] },
+    { "section": "11.12", "article": null, "name": "Power to Remit Penalties", "text": null, "status": "RESEARCH_NEEDED", "referenced_by": ["2021-D"] }
+  ]
+}

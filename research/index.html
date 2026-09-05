@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research Mode | Cove Charter Watch</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-page="research" data-root="../">
+<a class="skip" href="#main">Skip to main content</a>
+<header class="masthead"><div class="wrap"><div class="masthead-inner">
+<a class="wordmark" href="../index.html">Cove Charter Watch<span>Research Mode</span></a>
+<nav class="site" aria-label="Main navigation"></nav>
+</div></div></header>
+<main id="main" class="wrap">
+
+<div class="hero">
+<h1>Research mode</h1>
+<p class="standfirst">Build and edit amendment records offline, then export JSON to paste into the data files. Nothing here writes to a server, because there is no server.</p>
+</div>
+
+<section>
+<div class="callout" role="alert">
+<h3>Do not deploy this folder</h3>
+<p>Cove Charter Watch is a static site. Every file in the repository is fetchable by anyone who knows the URL. There is no login to add, because there is no backend to check one. If this folder ships to production, anyone can open it.</p>
+<p>Two safe options. Keep <code>research/</code> out of the deployed branch entirely and run it locally. Or deploy it and put a Cloudflare Access policy on the <code>/research/*</code> path so Cloudflare handles authentication before the file is served. Unpublished research notes belong in <code>research-private/</code>, which is gitignored and never deployed either way.</p>
+</div>
+</section>
+
+<section>
+<h2>New amendment record</h2>
+<p class="lede">Fill what you have. Leave the rest empty. Empty fields export as null, which the site renders as a visible gap rather than a guess.</p>
+<form id="rec-form">
+<div class="searchbar"><label for="f-change_id">change_id</label><input id="f-change_id" placeholder="2018-A"></div>
+<div class="searchbar"><label for="f-date">date</label><input id="f-date" placeholder="2018-11-06"></div>
+<div class="searchbar"><label for="f-prop">proposition_number</label><input id="f-prop" placeholder="A"></div>
+<div class="searchbar"><label for="f-title">title</label><input id="f-title"></div>
+<div class="searchbar"><label for="f-section">section, comma separated</label><input id="f-section" placeholder="2.09, 3.03"></div>
+<div class="searchbar"><label for="f-old">old_text, transcribed exactly</label><input id="f-old"></div>
+<div class="searchbar"><label for="f-new">new_text, transcribed exactly</label><input id="f-new"></div>
+<div class="searchbar"><label for="f-plain">plain_language_summary</label><input id="f-plain"></div>
+<div class="searchbar"><label for="f-resident">resident_effect</label><input id="f-resident"></div>
+<div class="searchbar"><label for="f-approved">approved_by</label><input id="f-approved" placeholder="Approved by voters"></div>
+<div class="searchbar"><label for="f-yes">vote_yes</label><input id="f-yes" inputmode="numeric"></div>
+<div class="searchbar"><label for="f-no">vote_no</label><input id="f-no" inputmode="numeric"></div>
+<div class="searchbar"><label for="f-sources">sources, comma separated ids</label><input id="f-sources" placeholder="src-clp-2021-thirteen"></div>
+<div class="searchbar"><label for="f-status">verification_status</label>
+<select id="f-status">
+<option>RESEARCH_NEEDED</option>
+<option>PARTIALLY_VERIFIED</option>
+<option>VERIFIED</option>
+</select></div>
+<div class="searchbar"><label for="f-missing">what is still missing</label><input id="f-missing"></div>
+<div class="searchbar"><label for="f-notes">research_notes, NOT exported to the public file</label><input id="f-notes"></div>
+<div class="filters">
+<button type="button" id="gen">Generate JSON</button>
+<button type="button" id="copy">Copy to clipboard</button>
+</div>
+</form>
+<h3>Public record, paste into data/amendments/amendments.json</h3>
+<pre class="tabpanel" id="out" tabindex="0">Fill the form and press Generate JSON.</pre>
+<h3>Private note, paste into research-private/notes.json</h3>
+<pre class="tabpanel" id="out-private" tabindex="0"></pre>
+</section>
+
+<section>
+<h2>Before you mark anything VERIFIED</h2>
+<ol class="prose">
+<li>Does a primary record confirm it, not a news article about it?</li>
+<li>Is the source in <code>data/sources/sources.json</code> with a working URL?</li>
+<li>Did you transcribe the charter text, or paraphrase it? Only transcription goes in <code>old_text</code> and <code>new_text</code>.</li>
+<li>If wording differs between two versions, do you have the earlier version itself, or are you inferring it? Inference is not evidence.</li>
+</ol>
+</section>
+
+</main>
+<footer class="site"><div class="wrap"></div></footer>
+<script src="../assets/app.js"></script>
+<script>
+(function () {
+  function v(id) { var e = document.getElementById(id); return e.value.trim() || null; }
+  function list(id) { var s = v(id); return s ? s.split(",").map(function (x) { return x.trim(); }).filter(Boolean) : []; }
+  function num(id) { var s = v(id); return s === null ? null : Number(s); }
+
+  document.getElementById("gen").addEventListener("click", function () {
+    var rec = {
+      change_id: v("f-change_id"),
+      date: v("f-date"),
+      election_date: v("f-date"),
+      ordinance_number: null,
+      proposition_number: v("f-prop"),
+      article: null,
+      section: list("f-section"),
+      topic: [],
+      title: v("f-title"),
+      old_text: v("f-old"),
+      old_text_status: v("f-old") ? "VERIFIED" : "RESEARCH_NEEDED",
+      old_text_described: null,
+      new_text: v("f-new"),
+      new_text_status: v("f-new") ? "VERIFIED" : "RESEARCH_NEEDED",
+      new_text_described: null,
+      plain_language_summary: v("f-plain"),
+      resident_effect: v("f-resident"),
+      government_effect: null,
+      categories: [],
+      approved_by: v("f-approved"),
+      approval_status: v("f-approved") ? "PARTIALLY_VERIFIED" : "RESEARCH_NEEDED",
+      vote_yes: num("f-yes"),
+      vote_no: num("f-no"),
+      sources: list("f-sources"),
+      verification_status: document.getElementById("f-status").value,
+      missing: v("f-missing")
+    };
+    document.getElementById("out").textContent = JSON.stringify(rec, null, 2);
+    var note = v("f-notes");
+    document.getElementById("out-private").textContent = note
+      ? JSON.stringify({ change_id: rec.change_id, research_notes: note, published: false }, null, 2)
+      : "No private note entered.";
+  });
+
+  document.getElementById("copy").addEventListener("click", function () {
+    var t = document.getElementById("out").textContent;
+    if (navigator.clipboard) navigator.clipboard.writeText(t);
+  });
+})();
+</script>
+</body>
+</html>
