@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0",
+  "note": "The amendment provenance index. Municode prints editor and ordinance annotations inside individual charter sections. Those annotations are the fastest route backward to the ordinances and elections that produced each change. IMPORTANT: an annotation proves only that Municode attributes a change to that event. It does not establish the prior text. No entry here may be used to mark a Before vs. Now comparison VERIFIED.",
+  "status_values": {
+    "CONFIRMED_STRUCTURE": "Verified directly from the Municode node identifier in a URL, which encodes article and section titles.",
+    "RELAYED_UNVERIFIED": "Reported to this project secondhand, not read from the source by this project. A research lead only.",
+    "OBTAINED": "The annotation has been read directly from Municode and transcribed."
+  },
+  "structure": [
+    {
+      "article": "III",
+      "title": "Elections, Initiative, Referendum and Recall",
+      "status": "CONFIRMED_STRUCTURE",
+      "evidence": "Municode table of contents, imported 2026-09-05. 18 sections, 3.01 through 3.18.",
+      "significance": "Recall is Sec. 3.13 Power to recall, with 3.14 Results of recall election, 3.15 Limitation on recall, 3.16 Public hearing and 3.17 Ballots in recall election. Initiative is 3.06, referendum 3.07, petition requirements 3.08, and filing, examination and certification of petitions 3.09."
+    },
+    {
+      "article": "IV",
+      "title": "Administrative Services",
+      "status": "CONFIRMED_STRUCTURE",
+      "evidence": "Municode table of contents.",
+      "significance": "City manager is Sec. 4.01, acting city manager 4.02, department heads 4.03, participation of the city manager in meetings 4.04, city secretary 4.05."
+    },
+    {
+      "article": "VII",
+      "title": "Issuance and Sale of Bonds",
+      "status": "CONFIRMED_STRUCTURE",
+      "evidence": "Municode table of contents.",
+      "significance": "Only two sections. Sec. 7.01 Power to borrow, Sec. 7.02 Reserved. The borrowing power question turns on 7.01."
+    },
+    {
+      "section": "11.18",
+      "article": "XI",
+      "title": "Amending the charter",
+      "status": "CONFIRMED_STRUCTURE",
+      "evidence": "Municode table of contents.",
+      "significance": "The charter's own amendment provision."
+    }
+  ],
+  "leads": [
+    {
+      "section": "3.01",
+      "annotation_reported": "Traces to Ordinance 2012-34 with voter approval on November 6, 2012.",
+      "ordinance": "2012-34",
+      "election_date": "2012-11-06",
+      "status": "RELAYED_UNVERIFIED",
+      "next_step": "Read the Municode annotation directly. Then obtain Ordinance 2012-34 from the city ordinance archive and the canvass for the November 6, 2012 election.",
+      "note": "If accurate, this establishes a 2012 charter election that is not yet in this project's election records."
+    },
+    {
+      "section": "3.03",
+      "annotation_reported": "Identifies a 2021 amendment.",
+      "ordinance": null,
+      "election_date": "2021-11-02",
+      "status": "RELAYED_UNVERIFIED",
+      "next_step": "If confirmed, this is evidence that 2021 Measure E passed, which would resolve one of the twelve unknown 2021 outcomes.",
+      "note": "Sec. 3.03 is Official Ballots, named in 2021 Measure E."
+    },
+    {
+      "section": "3.04",
+      "annotation_reported": "Identifies a 2021 amendment.",
+      "ordinance": null,
+      "election_date": "2021-11-02",
+      "status": "RELAYED_UNVERIFIED",
+      "next_step": "Same as 3.03. Sec. 3.04 is Elections, also named in Measure E.",
+      "note": "Two sections from the same measure both showing 2021 annotations would be strong evidence Measure E was approved."
+    },
+    {
+      "section": "3.08",
+      "annotation_reported": "Identifies both a 2014 ordinance and a 2021 amendment.",
+      "ordinance": null,
+      "election_date": "2021-11-02",
+      "status": "RELAYED_UNVERIFIED",
+      "next_step": "Obtain the 2014 ordinance. A 2014 charter election is not yet in this project's records.",
+      "note": "A section amended twice is exactly where a Before vs. Now comparison has the most to show, once both prior versions exist."
+    },
+    {
+      "section": "3.18",
+      "annotation_reported": "Ordinance 2023-33 resulted in the repeal of the former provision concerning Council's failure to call a recall election.",
+      "ordinance": "2023-33",
+      "election_date": "2023-11-07",
+      "status": "RELAYED_UNVERIFIED",
+      "next_step": "Highest priority lead in this file. Obtain Ordinance 2023-33 and the repealed text.",
+      "note": "Corroborated in one direction. Sec. 3.18 is now Reserved in the current charter, which is what a repealed section looks like in a codified document. That is consistent with the reported repeal by Ordinance 2023-33 but does not establish what the repealed text said, when it was repealed, or that voters approved it. A section can also be reserved by renumbering or by an earlier repeal.",
+      "priority": true
+    }
+  ],
+  "amendment_years_reported": {
+    "years": [
+      2010,
+      2012,
+      2014,
+      2021,
+      2023
+    ],
+    "status": "RELAYED_UNVERIFIED",
+    "note": "Reported from Municode annotations. This project independently holds records for 2018, which does not appear in this list, and for 2021 and 2023, which do. Do not treat this as a complete list of amendment years in either direction. The full list requires reading annotations across all eight articles."
+  },
+  "method": {
+    "goal": "Reconstruct the charter backward from the current authenticated structure rather than hunting forward through decades of city records.",
+    "steps": [
+      "Fetch each of the 88 section URLs individually using the node identifiers in data/charter/current.json, rather than scraping the charter page as a whole.",
+      "Export all eight current articles from Municode, including the annotation lines.",
+      "Extract every 'Ord. No.', 'Amd. of', 'approved' and 'Editor's note' string into this file.",
+      "For each annotation, obtain the named ordinance from the city ordinance archive.",
+      "For each ordinance, obtain the canvass or resolution declaring results.",
+      "Only when old text, proposition, result and current text are all present does a comparison become VERIFIED.",
+      "Municode's Compare versions control on a section may supply prior text directly. Check it before assuming the prior text is unavailable."
+    ],
+    "first_pass_filter": "Municode states that the absence of a parenthetical history note means a provision is unchanged from the original charter. So the sections carrying history notes are the reconstruction queue, and the sections without them can be deprioritized. Treat this as a filter for effort, not as proof: it is the codifier's representation."
+  },
+  "corrections": [
+    {
+      "date": "2026-09-05",
+      "what_was_wrong": "This project recorded Sec. 3.18 as Recall, inferred from the Municode node identifier CH_ARTIIIELINRERE_S3.18RE, reading the RE suffix as Recall.",
+      "correction": "The suffix means Reserved. The table of contents shows Sec. 3.18 is Reserved. Recall is Sec. 3.13. The same suffix appears on 2.12, 7.02, 8.02, 8.03, 11.03 through 11.06 and 11.11 through 11.12, all Reserved.",
+      "lesson": "A node identifier abbreviation is not a title. Structure inferred from a URL is a guess until the table of contents or the text confirms it."
+    }
+  ]
+}

@@ -10,7 +10,9 @@
       "proposition_number": "A",
       "article": null,
       "section": null,
-      "topic": ["elections"],
+      "topic": [
+        "elections"
+      ],
       "title": "Qualifications for office",
       "old_text": null,
       "old_text_status": "RESEARCH_NEEDED",
@@ -21,12 +23,17 @@
       "plain_language_summary": "This sets the rules for who is allowed to run for city office. It adds a requirement that a candidate must already be a registered voter, and that they must have lived inside the city limits for a full year before signing up to run.",
       "resident_effect": "A resident who recently moved into the city, or who moved across the city limit line, could be blocked from running for office for up to a year.",
       "government_effect": "Narrows the pool of eligible candidates for council and mayor.",
-      "categories": ["Election Rules Changed", "Needs Legal Review"],
+      "categories": [
+        "Election Rules Changed",
+        "Needs Legal Review"
+      ],
       "approved_by": null,
       "approval_status": "RESEARCH_NEEDED",
       "vote_yes": null,
       "vote_no": null,
-      "sources": ["src-clp-2021-thirteen"],
+      "sources": [
+        "src-clp-2021-thirteen"
+      ],
       "verification_status": "PARTIALLY_VERIFIED",
       "missing": "Ballot outcome. Old and new charter text."
     },
@@ -38,7 +45,9 @@
       "proposition_number": "B",
       "article": null,
       "section": null,
-      "topic": ["council-authority"],
+      "topic": [
+        "council-authority"
+      ],
       "title": "Compensation of council members",
       "old_text": null,
       "old_text_status": "RESEARCH_NEEDED",
@@ -49,12 +58,18 @@
       "plain_language_summary": "This would have raised the amount the mayor and council members are paid for each meeting they attend. Voters said no.",
       "resident_effect": "No change. Council pay stayed where it was because residents rejected the increase.",
       "government_effect": "None. The increase did not take effect.",
-      "categories": ["Administrative Change"],
+      "categories": [
+        "Administrative Change"
+      ],
       "approved_by": "Rejected by voters",
       "approval_status": "PARTIALLY_VERIFIED",
       "vote_yes": null,
       "vote_no": null,
-      "sources": ["src-clp-2021-thirteen", "src-kdh-2021-earlyvote", "src-kdh-2023-results"],
+      "sources": [
+        "src-clp-2021-thirteen",
+        "src-kdh-2021-earlyvote",
+        "src-kdh-2023-results"
+      ],
       "verification_status": "PARTIALLY_VERIFIED",
       "missing": "Vote totals. The rejection is reported in later coverage, not yet confirmed against the canvass."
     },
@@ -66,7 +81,9 @@
       "proposition_number": "C",
       "article": null,
       "section": null,
-      "topic": ["vacancies"],
+      "topic": [
+        "vacancies"
+      ],
       "title": "Hearings on forfeiture of office",
       "old_text": null,
       "old_text_status": "RESEARCH_NEEDED",
@@ -77,12 +94,17 @@
       "plain_language_summary": "Forfeiture of office is a way a sitting official can lose their seat without a recall election, usually for something like missing too many meetings or breaking a rule in the charter. This changed the process for holding that hearing.",
       "resident_effect": "Depends entirely on the actual wording. A clearer process can make removal more reliable, or it can add steps that make removal harder. The text is needed before anyone can say which.",
       "government_effect": "Changes the procedure by which the council handles an alleged forfeiture by one of its own members.",
-      "categories": ["Vacancy Rules Changed", "Needs Legal Review"],
+      "categories": [
+        "Vacancy Rules Changed",
+        "Needs Legal Review"
+      ],
       "approved_by": null,
       "approval_status": "RESEARCH_NEEDED",
       "vote_yes": null,
       "vote_no": null,
-      "sources": ["src-clp-2021-thirteen"],
+      "sources": [
+        "src-clp-2021-thirteen"
+      ],
       "verification_status": "PARTIALLY_VERIFIED",
       "missing": "Ballot outcome. Old and new charter text. This one is a research priority.",
       "priority": true
@@ -94,8 +116,16 @@
       "ordinance_number": null,
       "proposition_number": "D",
       "article": null,
-      "section": ["2.09", "11.05", "11.06", "11.11", "11.12"],
-      "topic": ["council-authority"],
+      "section": [
+        "2.09",
+        "11.05",
+        "11.06",
+        "11.11",
+        "11.12"
+      ],
+      "topic": [
+        "council-authority"
+      ],
       "title": "Remove unnecessary language",
       "old_text": null,
       "old_text_status": "RESEARCH_NEEDED",
@@ -106,15 +136,22 @@
       "plain_language_summary": "This removed four sections from the charter and rewrote the section about council meetings.",
       "resident_effect": "Section 2.09 controls when and how the council meets, which is when residents get to show up and speak. Whether this helped or hurt depends on what the rewrite says. Four deleted sections also need to be read before calling this cleanup.",
       "government_effect": "Shortens the charter. Effect on council meeting practice is unknown without the text.",
-      "categories": ["Administrative Change", "Needs Legal Review"],
+      "categories": [
+        "Administrative Change",
+        "Needs Legal Review"
+      ],
       "approved_by": null,
       "approval_status": "RESEARCH_NEEDED",
       "vote_yes": null,
       "vote_no": null,
-      "sources": ["src-clp-2021-thirteen"],
+      "sources": [
+        "src-clp-2021-thirteen"
+      ],
       "verification_status": "PARTIALLY_VERIFIED",
       "missing": "Ballot outcome. The deleted text of all four sections. The old and new Sec. 2.09.",
-      "priority": true
+      "priority": true,
+      "corroboration": "Corroborating evidence: Sections 11.05, 11.06, 11.11 and 11.12 are all Reserved in the current charter, and Sec. 2.09 Meetings of council still exists. That is exactly the outcome Measure D proposed. This raises confidence that Measure D was approved but does not establish it, because a section can be reserved by an earlier repeal or by renumbering. The canvass is still required.",
+      "corroboration_status": "PARTIALLY_VERIFIED"
     },
     {
       "change_id": "2021-E",
@@ -123,8 +160,14 @@
       "ordinance_number": null,
       "proposition_number": "E",
       "article": null,
-      "section": ["3.03", "3.04", "10.09"],
-      "topic": ["elections"],
+      "section": [
+        "3.03",
+        "3.04",
+        "10.09"
+      ],
+      "topic": [
+        "elections"
+      ],
       "title": "Consistency with state law",
       "old_text": null,
       "old_text_status": "RESEARCH_NEEDED",
@@ -135,15 +178,23 @@
       "plain_language_summary": "This replaced the city's own election rules with a pointer to state law, and deleted a requirement that the city submit annual reports.",
       "resident_effect": "When a local rule is replaced by a pointer to state law, the rule can then change in Austin without a Copperas Cove vote. Deleting an annual reporting requirement removes a document residents could have relied on.",
       "government_effect": "Reduces the number of local requirements the city must satisfy beyond state law.",
-      "categories": ["Election Rules Changed", "State Law Compliance", "Needs Legal Review"],
+      "categories": [
+        "Election Rules Changed",
+        "State Law Compliance",
+        "Needs Legal Review"
+      ],
       "approved_by": null,
       "approval_status": "RESEARCH_NEEDED",
       "vote_yes": null,
       "vote_no": null,
-      "sources": ["src-clp-2021-thirteen"],
+      "sources": [
+        "src-clp-2021-thirteen"
+      ],
       "verification_status": "PARTIALLY_VERIFIED",
       "missing": "Ballot outcome. The deleted Sec. 10.09 text. The prior Sec. 3.03 and 3.04.",
-      "priority": true
+      "priority": true,
+      "corroboration": "Corroborating evidence: Sec. 10.09 does not appear in the current charter at all, and Article X runs 10.01, 10.02, 10.10, 10.11. Sections 3.03 Official ballots and 3.04 Elections both still exist, consistent with revision rather than deletion. This is what Measure E proposed. The canvass is still required.",
+      "corroboration_status": "PARTIALLY_VERIFIED"
     },
     {
       "change_id": "2021-F",
@@ -153,7 +204,10 @@
       "proposition_number": "F",
       "article": null,
       "section": null,
-      "topic": ["initiative", "referendum"],
+      "topic": [
+        "initiative",
+        "referendum"
+      ],
       "title": "Petition signature requirements",
       "old_text": null,
       "old_text_status": "RESEARCH_NEEDED",
@@ -164,12 +218,19 @@
       "plain_language_summary": "When residents sign a petition to put something on the ballot, they now have to write down one identifying detail instead of two.",
       "resident_effect": "Appears to make petitions easier to sign and harder to throw out over a missing detail. This is the clearest candidate on the 2021 ballot for an increase in resident power, but the outcome still needs confirming.",
       "government_effect": "Fewer grounds for rejecting a signature during petition review.",
-      "categories": ["Initiative Changed", "Referendum Changed", "Resident Power Increased"],
+      "categories": [
+        "Initiative Changed",
+        "Referendum Changed",
+        "Resident Power Increased"
+      ],
       "approved_by": null,
       "approval_status": "RESEARCH_NEEDED",
       "vote_yes": null,
       "vote_no": null,
-      "sources": ["src-clp-2021-thirteen", "src-kdh-2021-earlyvote"],
+      "sources": [
+        "src-clp-2021-thirteen",
+        "src-kdh-2021-earlyvote"
+      ],
       "verification_status": "PARTIALLY_VERIFIED",
       "missing": "Ballot outcome. The signature count threshold itself, which this measure did not touch.",
       "priority": true
@@ -181,8 +242,12 @@
       "ordinance_number": null,
       "proposition_number": "G",
       "article": null,
-      "section": ["8.03"],
-      "topic": ["council-authority"],
+      "section": [
+        "8.03"
+      ],
+      "topic": [
+        "council-authority"
+      ],
       "title": "Non-substantive revisions",
       "old_text": null,
       "old_text_status": "RESEARCH_NEEDED",
@@ -193,15 +258,23 @@
       "plain_language_summary": "This was presented as a cleanup of spelling, grammar and outdated wording. It also removed one whole section.",
       "resident_effect": "Unknown until Sec. 8.03 is read. A measure labeled non-substantive that deletes an entire section deserves a look at what that section said.",
       "government_effect": "Unknown without the deleted text.",
-      "categories": ["Administrative Change", "Needs Legal Review"],
+      "categories": [
+        "Administrative Change",
+        "Needs Legal Review"
+      ],
       "approved_by": null,
       "approval_status": "RESEARCH_NEEDED",
       "vote_yes": null,
       "vote_no": null,
-      "sources": ["src-clp-2021-thirteen", "src-kdh-2021-earlyvote"],
+      "sources": [
+        "src-clp-2021-thirteen",
+        "src-kdh-2021-earlyvote"
+      ],
       "verification_status": "PARTIALLY_VERIFIED",
       "missing": "Ballot outcome. The text of the deleted Sec. 8.03.",
-      "priority": true
+      "priority": true,
+      "corroboration": "Corroborating evidence: Sec. 8.03 is Reserved in the current charter, which is the outcome Measure G proposed. Same caveat as Measure D. The canvass is still required, and the repealed text of 8.03 is still unknown.",
+      "corroboration_status": "PARTIALLY_VERIFIED"
     },
     {
       "change_id": "2021-H",
@@ -211,7 +284,9 @@
       "proposition_number": "H",
       "article": null,
       "section": null,
-      "topic": ["city-manager"],
+      "topic": [
+        "city-manager"
+      ],
       "title": "City manager authorized absences from city council meetings",
       "old_text": null,
       "old_text_status": "RESEARCH_NEEDED",
@@ -222,12 +297,18 @@
       "plain_language_summary": "The city manager can now skip a council meeting if the council agrees to it.",
       "resident_effect": "The top unelected administrator does not have to be in the room on nights the council approves an absence. That is one fewer person available to answer a resident question at a meeting.",
       "government_effect": "Gives the council discretion to excuse the city manager from attendance.",
-      "categories": ["City Manager Power Changed", "Administrative Change"],
+      "categories": [
+        "City Manager Power Changed",
+        "Administrative Change"
+      ],
       "approved_by": null,
       "approval_status": "RESEARCH_NEEDED",
       "vote_yes": null,
       "vote_no": null,
-      "sources": ["src-clp-2021-thirteen", "src-kdh-2021-earlyvote"],
+      "sources": [
+        "src-clp-2021-thirteen",
+        "src-kdh-2021-earlyvote"
+      ],
       "verification_status": "PARTIALLY_VERIFIED",
       "missing": "Ballot outcome. The prior attendance requirement text."
     },
@@ -239,7 +320,10 @@
       "proposition_number": "I",
       "article": null,
       "section": null,
-      "topic": ["budget", "debt-bonds"],
+      "topic": [
+        "budget",
+        "debt-bonds"
+      ],
       "title": "Capital improvement plan reviewed annually",
       "old_text": null,
       "old_text_status": "RESEARCH_NEEDED",
@@ -250,12 +334,17 @@
       "plain_language_summary": "The city's long-range plan for building and fixing things gets looked at every year instead of every five years.",
       "resident_effect": "More frequent review generally means more frequent public documents about what the city plans to build and borrow for.",
       "government_effect": "Increases the frequency of a required planning review.",
-      "categories": ["Budget Authority Changed", "Administrative Change"],
+      "categories": [
+        "Budget Authority Changed",
+        "Administrative Change"
+      ],
       "approved_by": null,
       "approval_status": "RESEARCH_NEEDED",
       "vote_yes": null,
       "vote_no": null,
-      "sources": ["src-clp-2021-thirteen"],
+      "sources": [
+        "src-clp-2021-thirteen"
+      ],
       "verification_status": "PARTIALLY_VERIFIED",
       "missing": "Ballot outcome. Charter section number and text."
     },
@@ -267,7 +356,9 @@
       "proposition_number": "J",
       "article": null,
       "section": null,
-      "topic": ["budget"],
+      "topic": [
+        "budget"
+      ],
       "title": "Capital outlay plan prepared and submitted annually",
       "old_text": null,
       "old_text_status": "RESEARCH_NEEDED",
@@ -278,12 +369,17 @@
       "plain_language_summary": "The city's plan for major purchases gets prepared every year instead of every five years.",
       "resident_effect": "Annual spending plans are easier to follow than five-year ones.",
       "government_effect": "Increases the frequency of a required submission.",
-      "categories": ["Budget Authority Changed", "Administrative Change"],
+      "categories": [
+        "Budget Authority Changed",
+        "Administrative Change"
+      ],
       "approved_by": null,
       "approval_status": "RESEARCH_NEEDED",
       "vote_yes": null,
       "vote_no": null,
-      "sources": ["src-clp-2021-thirteen"],
+      "sources": [
+        "src-clp-2021-thirteen"
+      ],
       "verification_status": "PARTIALLY_VERIFIED",
       "missing": "Ballot outcome. Charter section number and text."
     },
@@ -295,7 +391,9 @@
       "proposition_number": "K",
       "article": null,
       "section": null,
-      "topic": ["city-manager"],
+      "topic": [
+        "city-manager"
+      ],
       "title": "Personnel plan prepared and submitted annually",
       "old_text": null,
       "old_text_status": "RESEARCH_NEEDED",
@@ -306,12 +404,16 @@
       "plain_language_summary": "The plan covering city staffing gets prepared every year instead of every five years.",
       "resident_effect": "More frequent public documents about city staffing.",
       "government_effect": "Increases the frequency of a required submission by the administration.",
-      "categories": ["Administrative Change"],
+      "categories": [
+        "Administrative Change"
+      ],
       "approved_by": null,
       "approval_status": "RESEARCH_NEEDED",
       "vote_yes": null,
       "vote_no": null,
-      "sources": ["src-clp-2021-thirteen"],
+      "sources": [
+        "src-clp-2021-thirteen"
+      ],
       "verification_status": "PARTIALLY_VERIFIED",
       "missing": "Ballot outcome. Charter section number and text."
     },
@@ -323,7 +425,9 @@
       "proposition_number": "L",
       "article": null,
       "section": null,
-      "topic": ["budget"],
+      "topic": [
+        "budget"
+      ],
       "title": "Cosigner, director of budget",
       "old_text": null,
       "old_text_status": "RESEARCH_NEEDED",
@@ -334,12 +438,17 @@
       "plain_language_summary": "The second signature required on city checks moved from one staff position to another.",
       "resident_effect": "Who signs off on city money is a financial control question. The practical effect depends on which position sits closer to the spending decision.",
       "government_effect": "Moves a financial control duty between administrative positions.",
-      "categories": ["Administrative Change", "Needs Legal Review"],
+      "categories": [
+        "Administrative Change",
+        "Needs Legal Review"
+      ],
       "approved_by": null,
       "approval_status": "RESEARCH_NEEDED",
       "vote_yes": null,
       "vote_no": null,
-      "sources": ["src-clp-2021-thirteen"],
+      "sources": [
+        "src-clp-2021-thirteen"
+      ],
       "verification_status": "PARTIALLY_VERIFIED",
       "missing": "Ballot outcome. Charter section number and text."
     },
@@ -350,8 +459,13 @@
       "ordinance_number": null,
       "proposition_number": "M",
       "article": null,
-      "section": ["11.02"],
-      "topic": ["council-authority", "city-manager"],
+      "section": [
+        "11.02"
+      ],
+      "topic": [
+        "council-authority",
+        "city-manager"
+      ],
       "title": "Public officials and employees comply with state law",
       "old_text": null,
       "old_text_status": "RESEARCH_NEEDED",
@@ -362,15 +476,22 @@
       "plain_language_summary": "The city's own conflict of interest rule was replaced with the state's rule.",
       "resident_effect": "If the old local rule was stricter than the state rule, the ethics standard went down. If the old rule was weaker or unenforceable, it went up. The old Sec. 11.02 text is what decides this, and it has not been located.",
       "government_effect": "Aligns the city conflict of interest standard with Chapter 171.",
-      "categories": ["State Law Compliance", "Needs Legal Review"],
+      "categories": [
+        "State Law Compliance",
+        "Needs Legal Review"
+      ],
       "approved_by": null,
       "approval_status": "RESEARCH_NEEDED",
       "vote_yes": null,
       "vote_no": null,
-      "sources": ["src-clp-2021-thirteen"],
+      "sources": [
+        "src-clp-2021-thirteen"
+      ],
       "verification_status": "PARTIALLY_VERIFIED",
       "missing": "Ballot outcome. The prior Sec. 11.02 text. This determines whether the ethics standard rose or fell.",
-      "priority": true
+      "priority": true,
+      "corroboration": "Corroborating evidence: Sec. 11.02 Conflict of interest still exists in the current charter, consistent with revision rather than deletion. The prior text remains unknown, so whether the ethics standard rose or fell is still undetermined.",
+      "corroboration_status": "PARTIALLY_VERIFIED"
     },
     {
       "change_id": "2023-A",
@@ -380,7 +501,9 @@
       "proposition_number": "A",
       "article": null,
       "section": null,
-      "topic": ["council-authority"],
+      "topic": [
+        "council-authority"
+      ],
       "title": "Compensation of the mayor and council members",
       "old_text": null,
       "old_text_status": "RESEARCH_NEEDED",
@@ -391,12 +514,17 @@
       "plain_language_summary": "This would have raised meeting pay for the mayor and council. Residents voted it down for the second time in two years.",
       "resident_effect": "No change to the charter. Council pay is one of the few things the council cannot change without asking residents first.",
       "government_effect": "None. The increase did not take effect.",
-      "categories": ["Administrative Change"],
+      "categories": [
+        "Administrative Change"
+      ],
       "approved_by": "Rejected by voters",
       "approval_status": "PARTIALLY_VERIFIED",
       "vote_yes": 960,
       "vote_no": 1393,
-      "sources": ["src-kdh-2023-results", "src-kdh-2023-ballot"],
+      "sources": [
+        "src-kdh-2023-results",
+        "src-kdh-2023-ballot"
+      ],
       "verification_status": "PARTIALLY_VERIFIED",
       "missing": "Official canvass confirming the reported totals of 960 for and 1,393 against."
     },
@@ -408,7 +536,9 @@
       "proposition_number": "B",
       "article": null,
       "section": null,
-      "topic": ["elections"],
+      "topic": [
+        "elections"
+      ],
       "title": "Strike language inconsistent with state law",
       "old_text": null,
       "old_text_status": "RESEARCH_NEEDED",
@@ -419,12 +549,18 @@
       "plain_language_summary": "Conflicting wording was taken out of the charter. State law already controlled in those spots, so this mostly changed the document rather than the rule.",
       "resident_effect": "Likely minimal, but which sections were touched has not been confirmed.",
       "government_effect": "Removes charter language that could not be enforced anyway.",
-      "categories": ["State Law Compliance", "Administrative Change"],
+      "categories": [
+        "State Law Compliance",
+        "Administrative Change"
+      ],
       "approved_by": "Approved by voters",
       "approval_status": "PARTIALLY_VERIFIED",
       "vote_yes": null,
       "vote_no": null,
-      "sources": ["src-kdh-2023-ballot", "src-kdh-2023-results"],
+      "sources": [
+        "src-kdh-2023-ballot",
+        "src-kdh-2023-results"
+      ],
       "verification_status": "PARTIALLY_VERIFIED",
       "missing": "Vote totals. Which sections were struck."
     },
@@ -447,12 +583,16 @@
       "plain_language_summary": "Three more charter changes passed in November 2023. We have not yet obtained what they say. This entry exists so the gap is visible rather than hidden.",
       "resident_effect": "Unknown.",
       "government_effect": "Unknown.",
-      "categories": ["Needs Legal Review"],
+      "categories": [
+        "Needs Legal Review"
+      ],
       "approved_by": "Approved by voters",
       "approval_status": "PARTIALLY_VERIFIED",
       "vote_yes": null,
       "vote_no": null,
-      "sources": ["src-kdh-2023-results"],
+      "sources": [
+        "src-kdh-2023-results"
+      ],
       "verification_status": "RESEARCH_NEEDED",
       "missing": "Ballot language, section numbers, vote totals, and the election ordinance.",
       "priority": true
@@ -476,12 +616,16 @@
       "plain_language_summary": "A 2021 news report states the charter was last amended at a general election in November 2018. Nothing about what changed has been located yet.",
       "resident_effect": "Unknown.",
       "government_effect": "Unknown.",
-      "categories": ["Needs Legal Review"],
+      "categories": [
+        "Needs Legal Review"
+      ],
       "approved_by": null,
       "approval_status": "RESEARCH_NEEDED",
       "vote_yes": null,
       "vote_no": null,
-      "sources": ["src-clp-2021-thirteen"],
+      "sources": [
+        "src-clp-2021-thirteen"
+      ],
       "verification_status": "RESEARCH_NEEDED",
       "missing": "Everything. Number of propositions, ballot language, results, ordinance calling the election.",
       "priority": true

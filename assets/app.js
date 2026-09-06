@@ -85,45 +85,49 @@
 
   /* --------------------------------------------------------------- chrome */
 
+  /* Condensed primary nav. Search and Explore Charter live in .mast-actions,
+     so they are not repeated here. */
   var NAV = [
-    ["index.html", "Home"],
-    ["timeline.html", "Charter Timeline"],
-    ["changes.html", "Charter Changes"],
-    ["before-now.html", "Before vs. Now"],
-    ["resident-powers.html", "Resident Powers"],
-    ["council.html", "Council Powers"],
-    ["city-manager.html", "City Manager"],
-    ["debt.html", "Debt & Bonds"],
-    ["recall.html", "Elections & Recall"],
-    ["questions.html", "What This Means"],
-    ["power-shift.html", "Who Holds the Power?"],
-    ["sources.html", "Source Library"],
-    ["search.html", "Search"]
+    ["charter.html", "Charter"],
+    ["timeline.html", "Timeline"],
+    ["power-shift.html", "Power"],
+    ["recall.html", "Elections"],
+    ["debt.html", "Debt"],
+    ["sources.html", "Sources"]
   ];
+
+  /* Pages reachable from the homepage and in-page links but not in the top nav. */
+  var NAV_ALIAS = {
+    "changes.html": "charter.html",
+    "before-now.html": "charter.html",
+    "topic.html": "charter.html",
+    "resident-powers.html": "power-shift.html",
+    "council.html": "power-shift.html",
+    "city-manager.html": "power-shift.html",
+    "questions.html": "power-shift.html"
+  };
 
   function chrome() {
     var here = location.pathname.split("/").pop() || "index.html";
+    var active = NAV_ALIAS[here] || here;
     var nav = document.querySelector("nav.site");
     if (nav) {
       nav.innerHTML = NAV.map(function (l) {
         return '<a href="' + ROOT + l[0] + '"' +
-          (l[0] === here ? ' aria-current="page"' : "") + ">" + l[1] + "</a>";
+          (l[0] === active ? ' aria-current="page"' : "") + ">" + l[1] + "</a>";
       }).join("");
     }
-
-    var wm = document.querySelector(".wordmark");
-    if (wm) wm.setAttribute("href", ROOT + "index.html");
 
     var foot = document.querySelector("footer.site .wrap");
     if (foot) {
       foot.innerHTML =
+        '<p class="disclaimer">This project is not affiliated with the City of Copperas Cove.</p>' +
         "<p><strong>Cove Charter Watch is an independent civic research project.</strong> " +
         "Information is reconstructed in good faith from public records and historical sources. " +
         "Missing records do not establish that an event did not occur. Plain-language explanations " +
         "are provided for educational purposes and are not legal advice.</p>" +
-        "<p>This project is not affiliated with the City of Copperas Cove. It does not endorse or " +
-        "oppose any candidate, official, party or ballot measure. Where a legal question is unsettled, " +
-        "the site says so rather than resolving it.</p>" +
+        "<p>It does not endorse or oppose any candidate, official, party or ballot measure. Where a " +
+        "legal question is unsettled, the site says so rather than resolving it.</p>" +
         "<p><strong>Research prepared by Marimer Cruz-Nieves.</strong></p>" +
         '<p>Corrections and records are welcome. An old charter, an election ordinance or a canvass ' +
         "is exactly what closes the open gaps listed in the " +
@@ -209,47 +213,236 @@
 
   /* ------------------------------------------------------------ renderers */
 
-  function renderStats() {
-    var host = document.getElementById("stats");
-    if (!host) return;
-    var recs = DATA.amendments.records;
-    var sections = {};
-    recs.forEach(function (r) {
-      (r.section || []).forEach(function (s) { sections[s] = 1; });
+  /* Statistics are driven entirely by data/audit.json. A metric with a null
+     count prints "Research in progress". Nothing here is computed on the fly,
+     because a label that drifts from what is actually being counted is how the
+     earlier version of this page ended up displaying numbers it could not defend. */
+
+  /* Sections live under articles in schema 2.0. Flatten for search and lists.
+     Falls back to the old flat shape so an older data file still works. */
+  function charterSections() {
+    if (!DATA.charter) return [];
+    if (Array.isArray(DATA.charter.articles)) {
+      return DATA.charter.articles.reduce(function (acc, a) {
+        return acc.concat(a.sections || []);
+      }, []);
+    }
+    return DATA.charter.sections || [];
+  }
+
+
+  /* ------------------------------------------------------- current charter */
+
+  function renderCharter() {
+    var prov = document.getElementById("charter-provenance");
+    var body = document.getElementById("charter-body");
+    if (!prov || !body || !DATA.charter) return;
+
+    var src = DATA.charter.source || {};
+    var checked = DATA.charter.last_checked;
+    var result = DATA.charter.last_checked_result;
+
+    var state = result === "never_run"
+      ? "The charter has not been ingested yet. Structure below is confirmed from Municode node identifiers only."
+      : result === "failed"
+        ? "The most recent refresh failed. The last successfully retrieved charter is shown below, unchanged."
+        : result === "manual_import"
+          ? "Imported by hand from a Municode export."
+          : "Retrieved from Municode.";
+
+    prov.innerHTML = '<div class="callout"><h3>Source and freshness</h3>' +
+      "<p>" + esc(state) + "</p>" +
+      "<p>Source: " + esc(src.publisher || "not set") +
+      '. <a href="' + esc(src.source_url || "#") + '" rel="noopener">View current source on Municode</a>.</p>' +
+      "<p>Current source last checked: " +
+      esc(checked ? new Date(checked).toISOString().slice(0, 10) : "never") + "</p>" +
+      "<p>" + esc(src.note || "") + "</p></div>";
+
+    var cod = DATA.charter.codification;
+    if (cod) {
+      prov.insertAdjacentHTML("beforeend",
+        '<div class="callout"><h3>What Municode says about this charter text</h3>' +
+        '<p style="white-space:pre-wrap">' + esc(cod.editors_note_verbatim) + "</p>" +
+        "<p><strong>What this establishes:</strong> " + esc(cod.what_this_does_and_does_not_establish) + "</p>" +
+        "<p><strong>Why detected differences are not amendments:</strong> " +
+        esc(cod.editorial_alterations_caveat) + "</p></div>");
+    }
+
+    var res = DATA.charter.reserved_sections;
+    if (res && res.sections && res.sections.length) {
+      prov.insertAdjacentHTML("beforeend",
+        "<h2>Reserved sections</h2><p class=\"prose\">" + esc(res.note) + "</p>" +
+        '<p class="meta">' + res.sections.map(function (x) {
+          return '<a href="#sec-' + esc(x) + '">Sec. ' + esc(x) + "</a>";
+        }).join("") + "</p>");
+    }
+
+    var arts = DATA.charter.articles || [];
+
+    var idx = document.getElementById("article-index");
+    if (idx) {
+      idx.className = "article-cards";
+      idx.innerHTML = arts.map(function (a) {
+        return '<a class="article-card" href="#art-' + esc(a.article || "") + '">' +
+          '<span class="numeral" aria-hidden="true">' + esc(a.article || "") + "</span>" +
+          "<h3>" + esc(a.article_title || "") + "</h3>" +
+          '<span class="count">' + (a.sections || []).length + " provisions</span>" +
+          '<span class="go">Explore article</span></a>';
+      }).join("");
+    }
+    var any = arts.some(function (a) {
+      return (a.sections || []).some(function (x) { return x.legal_text; });
     });
 
-    var residentCats = ["Resident Power Increased", "Resident Power Reduced",
-      "Initiative Changed", "Referendum Changed", "Recall Rules Changed", "Election Rules Changed"];
-    var govCats = ["Council Power Increased", "Council Power Reduced", "City Manager Power Increased",
-      "City Manager Power Reduced", "City Manager Power Changed", "Mayor Power Changed",
-      "Debt Authority Changed", "Bond Authority Changed", "Budget Authority Changed", "Vacancy Rules Changed"];
+    body.innerHTML = arts.map(function (a) {
+      return '<h2 id="art-' + esc(a.article || "") + '">Article ' + esc(a.article || "") + ". " +
+        esc(a.article_title || "") + "</h2>" +
+        (a.note ? '<p class="missing-note">' + esc(a.note) + "</p>" : "") +
+        (a.sections || []).map(function (x) {
+          return '<article class="record" id="sec-' + esc(x.section || "") + '">' +
+            '<div class="record-head"><span class="prop">Sec. ' + esc(x.section || "") + "</span>" +
+            "<h3>" + esc(x.section_title || "") + "</h3>" +
+            statusBadge(x.legal_text ? "VERIFIED" : "RESEARCH_NEEDED") + "</div>" +
+            (x.legal_text
+              ? '<div class="tabpanel"><p style="white-space:pre-wrap">' + esc(x.legal_text) + "</p></div>"
+              : '<p class="pending-block">Section text not yet ingested.</p>') +
+            (x.plain_english
+              ? '<div class="plain"><h4>In plain English</h4><p>' + esc(x.plain_english) + "</p></div>"
+              : "") +
+            (x.history && x.history.length
+              ? "<h4>Amendment history printed by Municode</h4><ul>" +
+                x.history.map(function (h) { return "<li>" + esc(h) + "</li>"; }).join("") + "</ul>"
+              : "") +
+            '<p class="meta"><a href="' + esc(x.source_url) + '" rel="noopener">View current source on Municode</a>' +
+            "<span>Retrieved: " + esc(x.retrieved_at ? x.retrieved_at.slice(0, 10) : "not yet") + "</span>" +
+            (x.node_id ? '<span class="cite">' + esc(x.node_id) + "</span>" : "") + "</p></article>";
+        }).join("");
+    }).join("");
 
-    function countCat(list) {
-      return recs.filter(function (r) {
-        return (r.categories || []).some(function (c) { return list.indexOf(c) > -1; });
-      }).length;
+    if (!any) {
+      body.insertAdjacentHTML("afterbegin",
+        '<div class="callout"><h3>No section text on file yet</h3>' +
+        "<p>Run <code>npm run update-charter</code> to ingest from Municode, or " +
+        "<code>npm run import-charter charter.txt</code> to import a hand export. " +
+        "Until then this page shows only the structure confirmed from Municode node identifiers.</p></div>");
     }
 
-    var researching = recs.filter(function (r) {
-      return r.verification_status !== "VERIFIED";
-    }).length;
+    var det = document.getElementById("detected");
+    if (det) {
+      fetch(ROOT + "data/charter/detected-changes.json")
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) {
+          if (!d || !d.count) {
+            det.innerHTML = "<p>No differences detected. This is expected until at least two snapshots exist.</p>";
+            return;
+          }
+          det.innerHTML = "<p>" + d.count + " difference(s) detected on " +
+            esc(d.generated_at.slice(0, 10)) + ".</p>" +
+            d.changes.map(function (c) {
+              return '<article class="record"><div class="record-head">' +
+                '<span class="prop">Sec. ' + esc(c.section || "") + "</span>" +
+                "<h3>" + esc(c.type.replace(/_/g, " ")) + "</h3>" +
+                '<span class="badge RESEARCH_NEEDED">' + esc(c.status) + "</span></div>" +
+                '<p class="missing-note">Next step: ' + esc(c.next_step) + "</p></article>";
+            }).join("");
+        })
+        .catch(function () {
+          det.innerHTML = "<p>No differences file yet. Run <code>npm run diff-charter</code> after a second snapshot.</p>";
+        });
+    }
+  }
 
-    var adopted = DATA.charter.charter_adopted;
+  function renderStats() {
+    var host = document.getElementById("stats");
+    if (!host || !DATA.audit) return;
+
+    var show = ["elections", "propositions", "outcome_known", "outcome_unknown",
+                "sections_named", "sections_transcribed"];
+
+    host.innerHTML = show.map(function (id) {
+      var m = metric(id);
+      if (!m) return "";
+      var body = (m.count === null || m.count === undefined)
+        ? '<b class="pending">Research in progress</b>'
+        : "<b>" + esc(m.count) + "</b>";
+      return "<div>" + body + "<small>" + esc(m.label) + "</small></div>";
+    }).join("");
+  }
+
+  function metric(id) {
+    return (DATA.audit.metrics || []).filter(function (m) { return m.id === id; })[0];
+  }
+
+  function renderStatusBoard() {
+    var host = document.getElementById("status-board");
+    if (!host || !DATA.audit) return;
+    host.innerHTML = "<table><caption class=\"visually-hidden\">Research status by area</caption>" +
+      "<thead><tr><th scope=\"col\">Area</th><th scope=\"col\">State</th>" +
+      "<th scope=\"col\">Evidence status</th><th scope=\"col\">Detail</th></tr></thead><tbody>" +
+      (DATA.audit.status_board || []).map(function (r) {
+        return "<tr><td><strong>" + esc(r.label) + "</strong></td><td>" + esc(r.state) +
+          "</td><td>" + statusBadge(r.status) + "</td><td>" + esc(r.detail) + "</td></tr>";
+      }).join("") + "</tbody></table>";
+  }
+
+  function renderAudit() {
+    var host = document.getElementById("audit");
+    if (!host || !DATA.audit) return;
+    host.innerHTML = "<table><caption class=\"visually-hidden\">How each number is calculated</caption>" +
+      "<thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Count</th>" +
+      "<th scope=\"col\">Records counted</th><th scope=\"col\">Calculation method</th>" +
+      "<th scope=\"col\">Status</th></tr></thead><tbody>" +
+      (DATA.audit.metrics || []).map(function (m) {
+        var count = (m.count === null || m.count === undefined)
+          ? "Research in progress" + (m.candidates ? " (" + m.candidates + " candidate" + (m.candidates === 1 ? "" : "s") + ")" : "")
+          : m.count;
+        var recs = (m.records && m.records.length) ? m.records.join(", ")
+          : (m.candidate_records && m.candidate_records.length ? "Candidates: " + m.candidate_records.join(", ") : "None");
+        return "<tr><td>" + esc(m.label) + "</td><td>" + esc(count) + "</td><td>" + esc(recs) +
+          "</td><td>" + esc(m.method) + "</td><td>" + statusBadge(m.status) + "</td></tr>";
+      }).join("") + "</tbody></table>";
+
+    var log = document.getElementById("correction-log");
+    if (log) {
+      log.innerHTML = (DATA.audit.correction_log || []).map(function (c) {
+        return '<article class="record"><h3>Corrected ' + esc(c.date) + "</h3>" +
+          "<p><strong>What was wrong:</strong> " + esc(c.what_was_wrong) + "</p>" +
+          "<p><strong>Fix:</strong> " + esc(c.fix) + "</p></article>";
+      }).join("");
+    }
+  }
+
+  function renderProvenance() {
+    var host = document.getElementById("provenance");
+    if (!host || !DATA.provenance) return;
+    var P = DATA.provenance;
 
     host.innerHTML =
-      stat(adopted || null, "Charter adopted") +
-      stat(recs.length, "Charter amendments identified") +
-      stat(Object.keys(sections).length, "Sections changed") +
-      stat(countCat(residentCats), "Resident-power changes") +
-      stat(countCat(govCats), "Government-authority changes") +
-      stat(researching, "Changes still being researched");
-
-    function stat(v, label) {
-      var body = (v === null || v === undefined)
-        ? '<b class="pending">Research in progress</b>'
-        : "<b>" + esc(v) + "</b>";
-      return "<div>" + body + "<small>" + esc(label) + "</small></div>";
-    }
+      '<p class="prose">' + esc(P.note) + "</p>" +
+      "<h3>Charter structure confirmed so far</h3>" +
+      "<table><thead><tr><th scope=\"col\">Location</th><th scope=\"col\">Title</th>" +
+      "<th scope=\"col\">How we know</th><th scope=\"col\">Why it matters</th></tr></thead><tbody>" +
+      (P.structure || []).map(function (r) {
+        return "<tr><td>" + esc(r.section ? "Sec. " + r.section : "Article " + r.article) +
+          "</td><td>" + esc(r.title) + "</td><td>" + esc(r.evidence) + "</td><td>" +
+          esc(r.significance) + "</td></tr>";
+      }).join("") + "</tbody></table>" +
+      "<h3>Annotation leads</h3>" +
+      '<p class="prose">Each of these points at a document to obtain. None of them establishes what a section said before it changed, so none may be used to mark a comparison verified.</p>' +
+      (P.leads || []).map(function (l) {
+        return '<article class="record"><div class="record-head">' +
+          '<span class="prop">Sec. ' + esc(l.section) + "</span>" +
+          "<h3>" + esc(l.annotation_reported) + "</h3>" +
+          statusBadge(l.status === "RELAYED_UNVERIFIED" ? "RESEARCH_NEEDED" : "PARTIALLY_VERIFIED") +
+          (l.priority ? '<span class="badge cat flag">Priority lead</span>' : "") + "</div>" +
+          "<p>" + esc(l.note || "") + "</p>" +
+          '<p class="meta"><span>Ordinance: ' + esc(l.ordinance || "not named") + "</span>" +
+          "<span>Election: " + esc(l.election_date || "unknown") + "</span></p>" +
+          '<p class="missing-note">Next step: ' + esc(l.next_step) + "</p></article>";
+      }).join("") +
+      "<h3>Amendment years reported</h3>" +
+      '<p class="prose">' + esc((P.amendment_years_reported.years || []).join(", ")) + ". " +
+      esc(P.amendment_years_reported.note) + "</p>";
   }
 
   function recordHtml(r) {
@@ -289,6 +482,10 @@
       "<span>Date: " + esc(r.election_date || r.date) + "</span>" +
       "<span>Approved by: " + esc(r.approved_by || "Not yet determined") + "</span>" +
       votes + secs + sourceLinks(r.sources) + "</p>" +
+      (r.corroboration
+        ? '<div class="callout"><h4>Corroborating evidence in the current charter</h4><p>' +
+          esc(r.corroboration) + "</p></div>"
+        : "") +
       (r.missing ? '<p class="missing-note">Still missing: ' + esc(r.missing) + "</p>" : "") +
       "</article>";
   }
@@ -563,10 +760,11 @@
         return JSON.stringify(r).toLowerCase().indexOf(q) > -1;
       });
       host.innerHTML = shown.length ? shown.map(function (s) {
-        return '<article class="record"><h3><a href="' + esc(s.source_url) + '" rel="noopener">' +
+        return '<article class="source"><h3><a href="' + esc(s.source_url) + '" rel="noopener">' +
           esc(s.title) + "</a></h3>" + statusBadge(s.verification_status) +
-          '<p class="meta"><span>' + esc(s.entity) + "</span><span>" + esc(s.date || "undated") +
-          "</span><span>" + esc(s.document_type) + "</span>" +
+          '<p class="pub"><span class="doctype">' +
+          esc(String(s.document_type || "source").toUpperCase()) + "</span>" +
+          "<span>" + esc(s.entity) + "</span><span>" + esc(s.date || "undated") + "</span>" +
           "<span>Local copy: " + esc(s.local_copy || "none") + "</span>" +
           "<span>SHA-256: " + esc(s.sha256 || "not hashed") + "</span>" +
           "<span>Pages: " + esc(s.page_count == null ? "unknown" : s.page_count) + "</span>" +
@@ -635,11 +833,11 @@
         text: k + " " + DATA.glossary.terms[k]
       });
     });
-    DATA.charter.sections.forEach(function (s) {
+    charterSections().forEach(function (s) {
       index.push({
         kind: "Charter section",
-        title: "Sec. " + s.section + " " + s.name,
-        blurb: s.text || "Text not yet transcribed from the official charter.",
+        title: "Sec. " + s.section + " " + (s.section_title || s.name || ""),
+        blurb: s.legal_text || s.text || "Text not yet transcribed from the official charter.",
         href: ROOT + "changes.html",
         status: s.status,
         text: JSON.stringify(s)
@@ -702,6 +900,8 @@
     sources: "data/sources/sources.json",
     topics: "data/topics/topics.json",
     charter: "data/charter/current.json",
+    audit: "data/audit.json",
+    provenance: "data/charter/provenance.json",
     glossary: "data/glossary.json"
   };
 
@@ -728,6 +928,9 @@
     }).then(function (j) { DATA[k] = j; });
   })).then(function () {
     renderStats();
+    renderStatusBoard();
+    renderAudit();
+    renderProvenance();
     if (page === "changes") { wireFilters(); renderChanges(); }
     if (page === "timeline") renderTimeline();
     if (page === "before-now") renderBeforeNow();
@@ -742,6 +945,7 @@
     if (page === "power-shift") renderPowerShift();
     if (page === "sources") renderSources();
     if (page === "search") renderSearch();
+    if (page === "charter") renderCharter();
     wireTabs();
     glossary();
     if (location.hash) {

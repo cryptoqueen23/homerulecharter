@@ -180,3 +180,145 @@ Not populated, and deliberately visible as gaps:
   verified anywhere in this project.
 - Canvassed outcomes for twelve of the thirteen 2021 measures.
 - The entire November 2018 election record.
+
+---
+
+# Charter ingestion pipeline
+
+```
+MUNICODE -> FETCH -> NORMALIZE -> data/charter/current.json + snapshot -> PAGES
+```
+
+Pages read the local snapshot. Municode is never called from a visitor's browser.
+
+## Commands
+
+```
+npm run probe-municode        diagnose the API, writes nothing
+npm run update-charter:dry    full fetch, reports, writes nothing
+npm run update-charter        fetch and write current.json + a snapshot
+npm run import-charter file   manual path, parses a hand export
+npm run diff-charter          compare the two newest snapshots
+```
+
+No dependencies. Node 18 or newer. `npm install` is not required.
+
+## Run probe first
+
+The Municode API is undocumented and its parameter names are not guaranteed.
+The endpoint shapes in `scripts/ingest-municode.mjs` are best-effort and have
+**not** been confirmed against a live server. `--probe` prints what each endpoint
+actually returns so the shapes can be corrected against reality.
+
+If the API is blocked or has changed, use the manual path. It is not a lesser
+option, it just needs one export:
+
+1. Open the charter on Municode, use **Download (Docx)** at the Charter node
+2. Save it as plain text, for example `charter.txt`
+3. `npm run import-charter charter.txt`
+
+Both routes produce identical schema, so everything downstream is unaffected.
+
+## Guardrails
+
+These are the parts that matter most, and they are tested:
+
+- **A failed fetch never destroys good data.** The previous charter is preserved,
+  `last_checked_result` becomes `failed`, and the failure is recorded in
+  `ingest_log`. The charter never disappears from the site.
+- **Thin results are refused.** Fewer than 8 sections and the script writes
+  nothing. Partial data that looks complete is worse than no data.
+- **Snapshots are immutable.** A second run on the same date writes `-2`, never
+  an overwrite.
+- **A detected difference is never labeled an amendment.** Everything the diff
+  finds is written as `DETECTED CHANGE - VERIFICATION REQUIRED` and stays there
+  until an ordinance, election and canvass explain it. Municode recodifications
+  and typo fixes also produce differences.
+
+## Exact text is never mixed with explanation
+
+- `legal_text` holds Municode's language, unaltered
+- `plain_english` holds our explanation, and is always a separate field
+
+The parser preserves paragraph breaks and pulls annotation lines such as
+`(Ord. No. 2012-34, approved 11-6-12)` into `history` so they are not confused
+with the operative text.
+
+## Automation
+
+`.github/workflows/update-charter.yml` runs monthly and on manual dispatch. It
+fetches, diffs, and commits the snapshot, producing a permanent git history of
+charter changes.
+
+There is deliberately **no public HTTP endpoint** that triggers ingestion. An
+unsecured trigger would let anyone start a scraping job against Municode under
+this project's name.
+
+## Deploying with package.json present
+
+Adding `package.json` can make a host think there is something to build. There
+is not. `vercel.json` pins framework to null, build command to null and output
+directory to the repo root.
+
+On Cloudflare Pages, set framework preset **None**, build command **empty**,
+output directory `/`. If a deploy starts failing after this change, a build
+command got auto-detected. Clear it.
+
+---
+
+# Design system
+
+Copperas Cove civic palette, applied as tokens in `assets/style.css`. Change a
+value in `:root` and it changes everywhere.
+
+```
+--cove-navy      #193474    headers, headings, timeline axis, footer
+--cove-navy-deep #112456    hero gradient
+--cove-blue      #24469B    links, focus rings, selected states
+--cove-green     #078263    verification
+--cove-gold      #F4C500    rules, markers, active nav underline
+--cove-gold-ink  #7A5D00    gold's text counterpart
+--cove-green-ink #067054    green's text counterpart on tinted chips
+--surface        #FFFFFF
+--surface-muted  #F6F7F9
+--text-primary   #172033
+--text-muted     #667085
+```
+
+## Why there are two extra tokens you did not specify
+
+Gold on white measures **1.64:1**, far below the 4.5 minimum. It is unreadable
+as text. So gold is used only as a rule, marker, border, or on navy, and any
+gold-coded label uses `--cove-gold-ink` instead. Same reason for
+`--cove-green-ink`: brand green on the tinted verified chip measured 4.39:1.
+
+Every token pair in use was measured, not eyeballed. Results are in the comment
+block at the top of the stylesheet.
+
+Status is always a marker plus text, never color alone.
+
+## Logo
+
+`assets/mark.png` is the emblem, extracted from your Copperas Cove lockup with
+the black background made transparent so it sits cleanly on the navy masthead.
+`assets/logo.png` is the full lockup, used at low opacity as the hero watermark.
+`assets/icon-32.png`, `icon-180.png` and `icon-512.png` are the favicon and app
+icons, generated from the same emblem.
+
+To swap any of them, replace the file and keep the name. Nothing else changes.
+
+The emblem is used in the masthead rather than the full "COPPERAS COVE TEXAS"
+lockup. That is deliberate: at 40 pixels the wordmark would be illegible anyway,
+and pairing a city-styled wordmark with a site header is the fastest way for a
+reader to assume this is a municipal site. The footer answers that directly, with
+"This project is not affiliated with the City of Copperas Cove" as its first line
+set off by a gold rule.
+
+## What was borrowed and what was not
+
+Borrowed: the navy and gold color relationship, and the thin gold active-nav
+underline.
+
+Not borrowed: the City's navigation structure, hero photograph, floating
+department sidebar, button layout and search design. The layout here is a
+research-archive layout, not a municipal-services layout.

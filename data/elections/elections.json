@@ -11,7 +11,10 @@
       "summary": "Five charter propositions. Four passed. The mayor and council pay increase failed with a reported 1,393 against and 960 for.",
       "ordinance_number": null,
       "canvass_status": "RESEARCH_NEEDED",
-      "sources": ["src-kdh-2023-ballot", "src-kdh-2023-results"],
+      "sources": [
+        "src-kdh-2023-ballot",
+        "src-kdh-2023-results"
+      ],
       "verification_status": "PARTIALLY_VERIFIED"
     },
     {
@@ -24,7 +27,11 @@
       "summary": "Thirteen charter amendments, Measures A through M. Only the outcome of Measure B is currently sourced, and only through later news coverage.",
       "ordinance_number": null,
       "canvass_status": "RESEARCH_NEEDED",
-      "sources": ["src-clp-2021-thirteen", "src-kdh-2021-earlyvote", "src-kdh-2021-canvass"],
+      "sources": [
+        "src-clp-2021-thirteen",
+        "src-kdh-2021-earlyvote",
+        "src-kdh-2021-canvass"
+      ],
       "verification_status": "PARTIALLY_VERIFIED"
     },
     {
@@ -37,7 +44,9 @@
       "summary": "Reported as the last charter amendment before 2021. No measure list, ballot language or results located.",
       "ordinance_number": null,
       "canvass_status": "RESEARCH_NEEDED",
-      "sources": ["src-clp-2021-thirteen"],
+      "sources": [
+        "src-clp-2021-thirteen"
+      ],
       "verification_status": "RESEARCH_NEEDED"
     },
     {
@@ -50,8 +59,25 @@
       "summary": "The date Copperas Cove voters adopted the original home rule charter has not been located online. A 1979 date is sometimes cited informally and is NOT treated as verified here. The certified copy filed with the Texas Secretary of State is the record that settles it.",
       "ordinance_number": null,
       "canvass_status": "RESEARCH_NEEDED",
-      "sources": ["src-tsl-charters"],
+      "sources": [
+        "src-tsl-charters"
+      ],
       "verification_status": "RESEARCH_NEEDED"
+    },
+    {
+      "election_id": "2010-05-18",
+      "date": "2010-05-18",
+      "display_date": "May 18, 2010",
+      "type": "Council adoption of codified charter text",
+      "origin": "Section 3 of Ordinance No. 2010-21",
+      "propositions": null,
+      "summary": "Not a charter election. The city council adopted the charter text that Municode prints. This is a codification event and is listed here because every history note in the current charter is measured against it. It does not establish when residents adopted the home rule charter.",
+      "ordinance_number": "2010-21",
+      "canvass_status": "NOT_APPLICABLE",
+      "sources": [
+        "src-municode-charter"
+      ],
+      "verification_status": "VERIFIED"
     }
   ]
 }

@@ -11,14 +11,15 @@
       "can_residents_status": "RESEARCH_NEEDED",
       "requirements": null,
       "requirements_status": "RESEARCH_NEEDED",
-      "charter_location": null,
+      "charter_location": "Article III. Sec. 3.13 Power to recall, 3.14 Results of recall election, 3.15 Limitation on recall, 3.16 Public hearing, 3.17 Ballots in recall election. Sec. 3.18 is Reserved.",
       "charter_text": null,
       "charter_text_status": "RESEARCH_NEEDED",
       "has_changed": "Unknown. No recall-related measure appears in the 2021 or 2023 records we hold.",
       "history_status": "RESEARCH_NEEDED",
       "related_amendments": [],
       "sources": [],
-      "why_it_matters": "Recall is the only way residents can remove an elected official between elections. The signature threshold and the time limits decide whether that power is realistic or symbolic."
+      "why_it_matters": "Recall is the only way residents can remove an elected official between elections. The signature threshold and the time limits decide whether that power is realistic or symbolic.",
+      "charter_location_status": "CONFIRMED_STRUCTURE"
     },
     {
       "topic_id": "initiative",
@@ -29,14 +30,20 @@
       "can_residents_status": "PARTIALLY_VERIFIED",
       "requirements": "A signer must include either a date of birth or a voter registration number, not both, if Measure F passed in 2021. The number of signatures required has not been obtained.",
       "requirements_status": "PARTIALLY_VERIFIED",
-      "charter_location": null,
+      "charter_location": "Article III. Sec. 3.06 Power of initiative, with 3.08 Requirements of petition, 3.09 Filing, examination and certification of petition, 3.11 Council consideration and submission to voters, 3.12 Ballot form and results of elections.",
       "charter_text": null,
       "charter_text_status": "RESEARCH_NEEDED",
       "has_changed": "Yes. Measure F on the November 2, 2021 ballot changed the signature information requirement. The outcome of that vote has not been confirmed.",
       "history_status": "PARTIALLY_VERIFIED",
-      "related_amendments": ["2021-F"],
-      "sources": ["src-clp-2021-thirteen", "src-kdh-2021-earlyvote"],
-      "why_it_matters": "Initiative is how residents pass something the council will not. The signature threshold is what makes it usable or unusable."
+      "related_amendments": [
+        "2021-F"
+      ],
+      "sources": [
+        "src-clp-2021-thirteen",
+        "src-kdh-2021-earlyvote"
+      ],
+      "why_it_matters": "Initiative is how residents pass something the council will not. The signature threshold is what makes it usable or unusable.",
+      "charter_location_status": "CONFIRMED_STRUCTURE"
     },
     {
       "topic_id": "referendum",
@@ -47,14 +54,20 @@
       "can_residents_status": "PARTIALLY_VERIFIED",
       "requirements": "Same signature information rule as initiative under Measure F. The signature count and the deadline after an ordinance passes have not been obtained.",
       "requirements_status": "PARTIALLY_VERIFIED",
-      "charter_location": null,
+      "charter_location": "Article III. Sec. 3.07 Power of referendum, with 3.08, 3.09, 3.10 Effect of certification of referendum petition, 3.11 and 3.12.",
       "charter_text": null,
       "charter_text_status": "RESEARCH_NEEDED",
       "has_changed": "Yes, in the same 2021 measure as initiative.",
       "history_status": "PARTIALLY_VERIFIED",
-      "related_amendments": ["2021-F"],
-      "sources": ["src-clp-2021-thirteen", "src-kdh-2021-earlyvote"],
-      "why_it_matters": "Referendum is the check on an unpopular ordinance. The deadline matters as much as the signature count, because the clock usually starts the day the ordinance passes."
+      "related_amendments": [
+        "2021-F"
+      ],
+      "sources": [
+        "src-clp-2021-thirteen",
+        "src-kdh-2021-earlyvote"
+      ],
+      "why_it_matters": "Referendum is the check on an unpopular ordinance. The deadline matters as much as the signature count, because the clock usually starts the day the ordinance passes.",
+      "charter_location_status": "CONFIRMED_STRUCTURE"
     },
     {
       "topic_id": "charter-amendments",
@@ -65,14 +78,17 @@
       "can_residents_status": "VERIFIED",
       "requirements": "Majority of voters voting at an election held for that purpose, under Texas Local Government Code sec. 9.005(a). State law also limits how often a city may order a charter amendment election; the current statute text has not been pulled.",
       "requirements_status": "PARTIALLY_VERIFIED",
-      "charter_location": null,
+      "charter_location": "Article XI. Sec. 11.18 Amending the charter.",
       "charter_text": null,
       "charter_text_status": "RESEARCH_NEEDED",
       "has_changed": "The state rule is state law, not charter language, so it changes in Austin rather than locally.",
       "history_status": "PARTIALLY_VERIFIED",
       "related_amendments": [],
-      "sources": ["src-tml-home-rule"],
-      "why_it_matters": "Only voters can approve a charter change, but the City Council orders the election and sets the ballot language. That means the council decides which proposals residents get to vote on at all. Both halves of that sentence are true at once."
+      "sources": [
+        "src-tml-home-rule"
+      ],
+      "why_it_matters": "Only voters can approve a charter change, but the City Council orders the election and sets the ballot language. That means the council decides which proposals residents get to vote on at all. Both halves of that sentence are true at once.",
+      "charter_location_status": "CONFIRMED_STRUCTURE"
     },
     {
       "topic_id": "elections",
@@ -83,14 +99,22 @@
       "can_residents_status": "PARTIALLY_VERIFIED",
       "requirements": "Measure A in 2021 proposed requiring a candidate to be 18 by the first day of the term, registered to vote by the filing deadline, and continuously resident inside the city limits for the 12 months before that deadline. Whether it passed has not been confirmed.",
       "requirements_status": "PARTIALLY_VERIFIED",
-      "charter_location": "Sec. 3.03 official ballots, Sec. 3.04 elections",
+      "charter_location": "Article III. Sec. 3.01 Municipal elections, 3.02 Filing for office, 3.03 Official ballots, 3.04 Elections, 3.05 Oath of office. Candidate qualifications are Article II Sec. 2.04, with 2.05 Judge of qualifications.",
       "charter_text": null,
       "charter_text_status": "RESEARCH_NEEDED",
       "has_changed": "Yes. Measures A and E in 2021 and Proposition B in 2023 all touched election rules. Measure E replaced local ballot and election requirements with a pointer to state law.",
       "history_status": "PARTIALLY_VERIFIED",
-      "related_amendments": ["2021-A", "2021-E", "2023-B"],
-      "sources": ["src-clp-2021-thirteen", "src-kdh-2023-ballot"],
-      "why_it_matters": "When a local election rule is replaced with a pointer to state law, the rule can change without a Copperas Cove vote."
+      "related_amendments": [
+        "2021-A",
+        "2021-E",
+        "2023-B"
+      ],
+      "sources": [
+        "src-clp-2021-thirteen",
+        "src-kdh-2023-ballot"
+      ],
+      "why_it_matters": "When a local election rule is replaced with a pointer to state law, the rule can change without a Copperas Cove vote.",
+      "charter_location_status": "CONFIRMED_STRUCTURE"
     },
     {
       "topic_id": "council-authority",
@@ -101,14 +125,23 @@
       "can_residents_status": null,
       "requirements": null,
       "requirements_status": "RESEARCH_NEEDED",
-      "charter_location": "Article II covers the council. Sec. 2.09 covers meetings of the council.",
+      "charter_location": "Article II. Sec. 2.01 through 2.12, including 2.06 Compensation, 2.09 Meetings of council, 2.10 Rules of procedure, 2.11 Investigative power of the council.",
       "charter_text": null,
       "charter_text_status": "RESEARCH_NEEDED",
       "has_changed": "Yes. Measure D in 2021 revised Sec. 2.09 on council meetings and deleted four other sections. Measure M replaced the local conflict of interest rule with the state standard. Pay increases were proposed and rejected in both 2021 and 2023.",
       "history_status": "PARTIALLY_VERIFIED",
-      "related_amendments": ["2021-B", "2021-D", "2021-M", "2023-A"],
-      "sources": ["src-clp-2021-thirteen", "src-kdh-2023-results"],
-      "why_it_matters": "Council meeting rules decide when residents can show up and speak. Council pay is one of the few council matters residents get a direct vote on."
+      "related_amendments": [
+        "2021-B",
+        "2021-D",
+        "2021-M",
+        "2023-A"
+      ],
+      "sources": [
+        "src-clp-2021-thirteen",
+        "src-kdh-2023-results"
+      ],
+      "why_it_matters": "Council meeting rules decide when residents can show up and speak. Council pay is one of the few council matters residents get a direct vote on.",
+      "charter_location_status": "CONFIRMED_STRUCTURE"
     },
     {
       "topic_id": "mayor-authority",
@@ -119,14 +152,21 @@
       "can_residents_status": null,
       "requirements": null,
       "requirements_status": "RESEARCH_NEEDED",
-      "charter_location": null,
+      "charter_location": "Article II Sec. 2.03 Presiding officer: mayor and mayor pro tempore. Compensation is Sec. 2.06.",
       "charter_text": null,
       "charter_text_status": "RESEARCH_NEEDED",
       "has_changed": "Only mayoral compensation appears in the records we hold, proposed and rejected in 2021 and again in 2023.",
       "history_status": "RESEARCH_NEEDED",
-      "related_amendments": ["2021-B", "2023-A"],
-      "sources": ["src-clp-2021-thirteen", "src-kdh-2023-results"],
-      "why_it_matters": "Residents often assume the mayor runs the city. In a council-manager city that is usually the city manager's job. The charter is what settles it."
+      "related_amendments": [
+        "2021-B",
+        "2023-A"
+      ],
+      "sources": [
+        "src-clp-2021-thirteen",
+        "src-kdh-2023-results"
+      ],
+      "why_it_matters": "Residents often assume the mayor runs the city. In a council-manager city that is usually the city manager's job. The charter is what settles it.",
+      "charter_location_status": "CONFIRMED_STRUCTURE"
     },
     {
       "topic_id": "city-manager",
@@ -137,14 +177,22 @@
       "can_residents_status": "PARTIALLY_VERIFIED",
       "requirements": null,
       "requirements_status": "RESEARCH_NEEDED",
-      "charter_location": "Article IV is Administrative Service. Sec. 4.05 is City Secretary. The specific city manager sections have not been obtained.",
+      "charter_location": "Article IV Administrative Services. Sec. 4.01 City manager, 4.02 Acting city manager, 4.03 Department heads, 4.04 Participation of city manager and other department heads in meetings.",
       "charter_text": null,
       "charter_text_status": "RESEARCH_NEEDED",
       "has_changed": "Measure H in 2021 would allow the city manager to miss a council meeting with council approval. Measure K moved the personnel plan from a five-year to an annual cycle. Measure M applied the state conflict of interest standard to city officials.",
       "history_status": "PARTIALLY_VERIFIED",
-      "related_amendments": ["2021-H", "2021-K", "2021-M"],
-      "sources": ["src-clp-2021-thirteen", "src-municode-charter"],
-      "why_it_matters": "The person with the most day to day authority over city operations is the one residents did not vote for. How that person is appointed, evaluated and removed is the whole question."
+      "related_amendments": [
+        "2021-H",
+        "2021-K",
+        "2021-M"
+      ],
+      "sources": [
+        "src-clp-2021-thirteen",
+        "src-municode-charter"
+      ],
+      "why_it_matters": "The person with the most day to day authority over city operations is the one residents did not vote for. How that person is appointed, evaluated and removed is the whole question.",
+      "charter_location_status": "CONFIRMED_STRUCTURE"
     },
     {
       "topic_id": "vacancies",
@@ -155,14 +203,19 @@
       "can_residents_status": "RESEARCH_NEEDED",
       "requirements": null,
       "requirements_status": "RESEARCH_NEEDED",
-      "charter_location": null,
+      "charter_location": "Article II Sec. 2.07 Vacancies, forfeitures, filling of vacancies.",
       "charter_text": null,
       "charter_text_status": "RESEARCH_NEEDED",
       "has_changed": "Measure C in 2021 revised the requirements for holding a hearing on an alleged forfeiture of office.",
       "history_status": "PARTIALLY_VERIFIED",
-      "related_amendments": ["2021-C"],
-      "sources": ["src-clp-2021-thirteen"],
-      "why_it_matters": "Forfeiture is a way a seat can empty without residents voting on it. Appointment is a way a seat can fill without residents voting on it. Both belong in the same conversation."
+      "related_amendments": [
+        "2021-C"
+      ],
+      "sources": [
+        "src-clp-2021-thirteen"
+      ],
+      "why_it_matters": "Forfeiture is a way a seat can empty without residents voting on it. Appointment is a way a seat can fill without residents voting on it. Both belong in the same conversation.",
+      "charter_location_status": "CONFIRMED_STRUCTURE"
     },
     {
       "topic_id": "debt-bonds",
@@ -173,14 +226,19 @@
       "can_residents_status": "RESEARCH_NEEDED",
       "requirements": null,
       "requirements_status": "RESEARCH_NEEDED",
-      "charter_location": null,
+      "charter_location": "Article VII Issuance and Sale of Bonds. Sec. 7.01 Power to borrow. Sec. 7.02 is Reserved. Related: Article VIII Finance Administration.",
       "charter_text": null,
       "charter_text_status": "RESEARCH_NEEDED",
       "has_changed": "Measure I in 2021 moved the capital improvement plan review from every five years to annually.",
       "history_status": "PARTIALLY_VERIFIED",
-      "related_amendments": ["2021-I"],
-      "sources": ["src-clp-2021-thirteen"],
-      "why_it_matters": "This is where most residents assume they have a vote and often do not. The specific borrowing instrument decides it, and the charter may or may not add a stricter local limit on top of state law."
+      "related_amendments": [
+        "2021-I"
+      ],
+      "sources": [
+        "src-clp-2021-thirteen"
+      ],
+      "why_it_matters": "This is where most residents assume they have a vote and often do not. The specific borrowing instrument decides it, and the charter may or may not add a stricter local limit on top of state law.",
+      "charter_location_status": "CONFIRMED_STRUCTURE"
     },
     {
       "topic_id": "budget",
@@ -191,14 +249,22 @@
       "can_residents_status": "RESEARCH_NEEDED",
       "requirements": null,
       "requirements_status": "RESEARCH_NEEDED",
-      "charter_location": "Article X appears to cover financial procedure based on the Sec. 10.09 reference in the 2021 measures. Not confirmed.",
+      "charter_location": "Article VI The Budget. Sec. 6.01 Fiscal year, 6.02 Preparation and submission of proposed operating budget, 6.02.1 Amending the operating budget. Taxation is Article IX Sec. 9.01 Power to tax.",
       "charter_text": null,
       "charter_text_status": "RESEARCH_NEEDED",
       "has_changed": "Measures I, J and L in 2021 touched the capital improvement plan, the capital outlay plan and check countersigning. Measure E eliminated Sec. 10.09 on submission of annual reports.",
       "history_status": "PARTIALLY_VERIFIED",
-      "related_amendments": ["2021-E", "2021-I", "2021-J", "2021-L"],
-      "sources": ["src-clp-2021-thirteen"],
-      "why_it_matters": "Budget deadlines and required reports are what let a resident see a decision coming before it is final."
+      "related_amendments": [
+        "2021-E",
+        "2021-I",
+        "2021-J",
+        "2021-L"
+      ],
+      "sources": [
+        "src-clp-2021-thirteen"
+      ],
+      "why_it_matters": "Budget deadlines and required reports are what let a resident see a decision coming before it is final.",
+      "charter_location_status": "CONFIRMED_STRUCTURE"
     }
   ]
 }

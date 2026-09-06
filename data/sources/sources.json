@@ -25,7 +25,18 @@
       "local_copy": null,
       "sha256": null,
       "page_count": null,
-      "sections": ["2.09", "3.03", "3.04", "8.03", "10.09", "11.02", "11.05", "11.06", "11.11", "11.12"],
+      "sections": [
+        "2.09",
+        "3.03",
+        "3.04",
+        "8.03",
+        "10.09",
+        "11.02",
+        "11.05",
+        "11.06",
+        "11.11",
+        "11.12"
+      ],
       "notes": "Source for the full Measure A through M list, charter review committee membership and meeting dates, the July 20 2021 public hearing, the August 3 2021 council order calling the election, and the statement that the charter was last amended in November 2018. News coverage is secondary evidence, not a primary record.",
       "verification_status": "VERIFIED"
     },
@@ -123,18 +134,121 @@
       "local_copy": null,
       "sha256": null,
       "page_count": null,
-      "sections": ["4.05"],
-      "notes": "The current charter is published here. Municode renders in the browser so the text cannot be retrieved by an automated fetch. Use the Download (Docx) control at the Charter or Article level. Node IDs confirm Article IV is Administrative Service and Sec. 4.05 is City Secretary.",
+      "sections": [
+        "3.18",
+        "4.05"
+      ],
+      "notes": "The current charter is published here and is publicly available to anyone with a browser. It has NOT been transcribed into this project. Municode renders in the browser, so four automated retrieval routes were attempted and all failed: the public node returns an empty shell, the staging mirror is behind a login, search engines do not surface the section text, and the city's own ordinance PDFs are scanned images with no text layer. Export by hand using the Download (Docx) control at the Charter or Article level. Node identifiers confirm Article III is Elections, Initiative, Referendum and Recall, Sec. 3.18 is Recall, Article IV is Administrative Service, and Sec. 4.05 is City Secretary.",
+      "verification_status": "PARTIALLY_VERIFIED"
+    },
+    {
+      "source_document_id": "src-ord-2023-33",
+      "title": "Ordinance No. 2023-33, Ordering a Special Election for November 7, 2023",
+      "date": "2023",
+      "entity": "City of Copperas Cove",
+      "document_type": "Election Orders",
+      "source_url": "https://www.copperascovetx.gov/DocumentCenter/View/317/2023-33-Ordering-a-Special-Election-for-November-7-2023-PDF",
+      "local_copy": null,
+      "sha256": null,
+      "page_count": null,
+      "sections": [
+        "3.18"
+      ],
+      "notes": "Located but not yet ingested. The published PDF is a scanned image with no machine-readable text layer, so it must be OCRed or transcribed by hand. Reported to order the special election submitting proposed charter amendments to voters, and to be the ordinance behind the Sec. 3.18 repeal annotation.",
       "verification_status": "RESEARCH_NEEDED"
+    },
+    {
+      "source_document_id": "src-res-2021-22",
+      "title": "Resolution 2021-22, Special Election November 2, 2021",
+      "date": "2021",
+      "entity": "City of Copperas Cove",
+      "document_type": "Election Orders",
+      "source_url": "https://www.copperascovetx.gov/189/City-Resolutions",
+      "local_copy": null,
+      "sha256": null,
+      "page_count": null,
+      "sections": [],
+      "notes": "Identified by title in the city resolution archive. Not yet obtained. This should carry the certified ballot language for all thirteen 2021 measures.",
+      "verification_status": "RESEARCH_NEEDED"
+    },
+    {
+      "source_document_id": "src-res-2021-34",
+      "title": "Resolution 2021-34, Canvassing Returns and Declaring Results of the Special Election November 2, 2021",
+      "date": "2021",
+      "entity": "City of Copperas Cove",
+      "document_type": "Canvass Results",
+      "source_url": "https://www.copperascovetx.gov/189/City-Resolutions",
+      "local_copy": null,
+      "sha256": null,
+      "page_count": null,
+      "sections": [],
+      "notes": "The single highest-value missing document in the project. Identified by title in the city resolution archive but not yet obtained. It resolves twelve unknown 2021 outcomes at once.",
+      "verification_status": "RESEARCH_NEEDED"
+    },
+    {
+      "source_document_id": "src-city-ordinances",
+      "title": "City Ordinances archive",
+      "date": "2026",
+      "entity": "City of Copperas Cove",
+      "document_type": "Municipal Records",
+      "source_url": "https://www.copperascovetx.gov/190/City-Ordinances",
+      "local_copy": null,
+      "sha256": null,
+      "page_count": null,
+      "sections": [],
+      "notes": "Index of city ordinances including 2023-33. Route to every ordinance named in a Municode charter annotation.",
+      "verification_status": "VERIFIED"
+    },
+    {
+      "source_document_id": "src-city-resolutions",
+      "title": "City Resolutions archive",
+      "date": "2026",
+      "entity": "City of Copperas Cove",
+      "document_type": "Municipal Records",
+      "source_url": "https://www.copperascovetx.gov/189/City-Resolutions",
+      "local_copy": null,
+      "sha256": null,
+      "page_count": null,
+      "sections": [],
+      "notes": "Index of city resolutions including the 2021 election and canvass resolutions.",
+      "verification_status": "VERIFIED"
     }
   ],
   "needed": [
-    { "document_type": "Historical Charter", "what": "Original adopted home rule charter and every superseded version", "where": "Texas State Library and Archives Commission city charter collection; certified copy filed with the Texas Secretary of State; City Secretary" },
-    { "document_type": "Canvass Results", "what": "Canvass for the November 2, 2021 election covering all thirteen measures", "where": "City Council special meeting minutes from the week of November 3, 2021; Coryell County and Lampasas County election archives" },
-    { "document_type": "Canvass Results", "what": "Canvass for the November 7, 2023 election covering all five propositions", "where": "City Secretary; county election archives" },
-    { "document_type": "Election Orders", "what": "Every ordinance calling a charter amendment election", "where": "City ordinance archive and council minutes; public information request if the archive does not reach back far enough" },
-    { "document_type": "Ballots", "what": "Full ballot language as certified, for 2018, 2021 and 2023", "where": "City Secretary; county elections administrator" },
-    { "document_type": "Current Charter", "what": "Full current charter text, article by article", "where": "Municode Download (Docx) at the Charter node; cross check against any charter PDF posted by the city" },
-    { "document_type": "City Council Minutes", "what": "Charter Review Committee minutes July through December 2020, and the July 20 2021 public hearing", "where": "City Secretary" }
+    {
+      "document_type": "Canvass Results",
+      "what": "Resolution 2021-34, canvassing and declaring results of the November 2, 2021 special election",
+      "where": "City resolution archive at copperascovetx.gov/189. Resolves twelve unknown outcomes in one document."
+    },
+    {
+      "document_type": "Current Charter",
+      "what": "All eight current articles with annotation lines, exported from Municode",
+      "where": "Municode Download (Docx) at the Charter or Article node. Cannot be retrieved automatically."
+    },
+    {
+      "document_type": "Election Orders",
+      "what": "Ordinance 2023-33, readable text",
+      "where": "copperascovetx.gov/190. The posted PDF is a scan and needs OCR or hand transcription."
+    },
+    {
+      "document_type": "Historical Charter",
+      "what": "Any superseded charter version, and the original adopted charter",
+      "where": "Texas State Library and Archives Commission; certified copy filed with the Secretary of State; City Secretary. Also try Municode's Compare versions control per section."
+    },
+    {
+      "document_type": "Election Orders",
+      "what": "Ordinances behind the 2012, 2014 and 2010 annotations reported in charter sections",
+      "where": "City ordinance archive, once the annotations are read directly and the ordinance numbers confirmed."
+    },
+    {
+      "document_type": "Ballots",
+      "what": "Certified ballot language for 2018, 2021 and 2023",
+      "where": "City Secretary; Coryell and Lampasas county elections administrators."
+    },
+    {
+      "document_type": "City Council Minutes",
+      "what": "Charter Review Committee minutes, July through December 2020, and the July 20 2021 public hearing",
+      "where": "City Secretary."
+    }
   ]
 }

@@ -1,0 +1,194 @@
+{
+  "schema_version": "1.0",
+  "note": "Every number displayed on this site is defined here, with the exact records counted and the method used. If a metric cannot name its records, its count is null and the site prints 'Research in progress' instead of a figure. This file exists because an earlier version of the homepage displayed counts whose labels did not match what was actually being counted.",
+  "last_audited": "2026-09-05",
+  "correction_log": [
+    {
+      "date": "2026-09-05",
+      "what_was_wrong": "The homepage displayed '17 Charter amendments identified'. The 17 records included two rejected propositions, one placeholder representing three unexamined 2023 propositions, and one placeholder for a 2018 election with no known contents. A rejected proposition is not an amendment.",
+      "fix": "Replaced with separate metrics for elections, propositions, propositions with language on file, and propositions with a confirmed outcome."
+    },
+    {
+      "date": "2026-09-05",
+      "what_was_wrong": "The homepage displayed '10 Sections changed'. Those were sections named in ballot language. Because twelve of thirteen 2021 outcomes are unsourced, it is not established that any of them changed.",
+      "fix": "Relabeled as 'Charter sections named in ballot language'. A separate metric for sections confirmed changed reads Research in progress."
+    },
+    {
+      "date": "2026-09-05",
+      "what_was_wrong": "'3 Resident-power changes' and '4 Government-authority changes' were produced by matching category tags, which included tags like 'Election Rules Changed' that do not establish a direction of power shift.",
+      "fix": "Both now read Research in progress, with candidate counts shown separately and labeled as candidates."
+    },
+    {
+      "date": "2026-09-05",
+      "what_was_wrong": "This site recorded Sec. 3.18 as the Recall section, inferred from a Municode node identifier ending in RE.",
+      "fix": "RE means Reserved, not Recall. Sec. 3.18 is Reserved; recall is Sec. 3.13. Corrected across the provenance index and all topic pages."
+    },
+    {
+      "date": "2026-09-05",
+      "what_was_wrong": "The table of contents parser reported 87 sections. It dropped one because its node identifier contained hyphens, which the parser's character class excluded.",
+      "fix": "Hyphens allowed in node identifiers. The count is 88. The dropped entry was the range section Sec. 6.02.2 through 6.05.1, Reserved."
+    }
+  ],
+  "metrics": [
+    {
+      "id": "elections",
+      "label": "Charter elections identified",
+      "count": 3,
+      "records": [
+        "2018-11",
+        "2021-11-02",
+        "2023-11-07"
+      ],
+      "method": "Count of election records with a known date. The original charter adoption is excluded because its date is unverified.",
+      "status": "PARTIALLY_VERIFIED"
+    },
+    {
+      "id": "propositions",
+      "label": "Ballot propositions identified",
+      "count": 18,
+      "records": [
+        "2021 Measures A through M (13)",
+        "2023 Propositions A through E (5)"
+      ],
+      "method": "Sum of propositions reported to have appeared on each ballot. The November 2018 election is excluded because the number of propositions is unknown, so this is a floor, not a total.",
+      "status": "PARTIALLY_VERIFIED"
+    },
+    {
+      "id": "language_on_file",
+      "label": "Propositions with ballot language on file",
+      "count": 15,
+      "records": [
+        "2021-A through 2021-M (13)",
+        "2023-A",
+        "2023-B"
+      ],
+      "method": "Count of propositions where we hold a description of the ballot language from a news source. None are transcriptions from the certified ballot.",
+      "status": "PARTIALLY_VERIFIED"
+    },
+    {
+      "id": "outcome_known",
+      "label": "Propositions with a confirmed outcome",
+      "count": 3,
+      "records": [
+        "2021-B rejected",
+        "2023-A rejected",
+        "2023-B approved"
+      ],
+      "method": "Count of propositions where a source states the individual result. News coverage also reports that four of five 2023 propositions passed, but does not identify which four, so those are not counted individually.",
+      "status": "PARTIALLY_VERIFIED"
+    },
+    {
+      "id": "outcome_unknown",
+      "label": "Propositions with no sourced outcome",
+      "count": 15,
+      "records": [
+        "2021-A, C through M (12)",
+        "2023-C, D, E (3)"
+      ],
+      "method": "Propositions identified minus propositions with a confirmed individual outcome.",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "sections_named",
+      "label": "Charter sections named in ballot language",
+      "count": 10,
+      "records": [
+        "2.09",
+        "3.03",
+        "3.04",
+        "8.03",
+        "10.09",
+        "11.02",
+        "11.05",
+        "11.06",
+        "11.11",
+        "11.12"
+      ],
+      "method": "Distinct section numbers appearing in the ballot descriptions we hold. Being named in a proposition does not establish that the section changed, because the outcomes are unsourced.",
+      "status": "PARTIALLY_VERIFIED"
+    },
+    {
+      "id": "sections_confirmed_changed",
+      "label": "Charter sections confirmed changed",
+      "count": null,
+      "records": [],
+      "method": "Requires the canvassed result plus the before and after text. Neither is on file for any section.",
+      "status": "RESEARCH_NEEDED"
+    },
+    {
+      "id": "sections_transcribed",
+      "label": "Charter sections located",
+      "count": 88,
+      "records": [],
+      "method": "All 88 section entries across 11 articles confirmed present from the Municode table of contents, with numbers, titles, node identifiers and direct section URLs. Includes one range entry, Sec. 6.02.2 through 6.05.1 Reserved. Section body text is not ingested.",
+      "status": "PARTIALLY_VERIFIED"
+    },
+    {
+      "id": "resident_power",
+      "label": "Resident-power changes",
+      "count": null,
+      "candidates": 1,
+      "candidate_records": [
+        "2021-F"
+      ],
+      "records": [],
+      "method": "A change qualifies only when the before text, the after text and the outcome are all established. One candidate exists: the 2021 petition signature measure appears to reduce what a signer must provide, but its outcome is unsourced.",
+      "status": "RESEARCH_NEEDED"
+    },
+    {
+      "id": "government_authority",
+      "label": "Government-authority changes",
+      "count": null,
+      "candidates": 4,
+      "candidate_records": [
+        "2021-C",
+        "2021-D",
+        "2021-H",
+        "2021-M"
+      ],
+      "records": [],
+      "method": "Same standard as resident-power changes. Four candidates touch forfeiture of office, council meetings, city manager attendance and the conflict of interest standard. None has a sourced outcome or before text.",
+      "status": "RESEARCH_NEEDED"
+    },
+    {
+      "id": "sections_with_text",
+      "label": "Charter sections with text on file",
+      "count": 0,
+      "records": [],
+      "method": "Sections where legal_text is populated. The table of contents gives titles only.",
+      "status": "VERIFIED"
+    }
+  ],
+  "status_board": [
+    {
+      "label": "Current charter",
+      "state": "Structure imported, text pending",
+      "status": "PARTIALLY_VERIFIED",
+      "detail": "All 11 articles and 87 sections imported from the Municode table of contents on 2026-09-05, with node identifiers and source links. Section body text has not been ingested."
+    },
+    {
+      "label": "Current sections",
+      "state": "87 located, 0 with text",
+      "status": "PARTIALLY_VERIFIED",
+      "detail": "Recall is Sec. 3.13, initiative 3.06, referendum 3.07, city manager 4.01, power to borrow 7.01, amending the charter 11.18."
+    },
+    {
+      "label": "Historical charters",
+      "state": "Research in progress",
+      "status": "RESEARCH_NEEDED",
+      "detail": "No superseded version of the charter has been located. Municode publishes the current version only."
+    },
+    {
+      "label": "Charter elections",
+      "state": "Being reconstructed",
+      "status": "PARTIALLY_VERIFIED",
+      "detail": "Three elections identified. Primary ordinances and canvasses have been located by title but not yet obtained as readable text."
+    },
+    {
+      "label": "Before and after comparisons",
+      "state": "None yet supported by records",
+      "status": "RESEARCH_NEEDED",
+      "detail": "A comparison requires the prior text. No prior charter text is on file, so every comparison currently shows a description rather than the language itself."
+    }
+  ]
+}

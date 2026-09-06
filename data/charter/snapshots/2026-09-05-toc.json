@@ -971,7 +971,7 @@
             "from": "6.02.2.",
             "to": "6.05.1."
           },
-          "label_verbatim": "Sec. 6.02.2.\u20146.05.1. - Reserved."
+          "label_verbatim": "Sec. 6.02.2.—6.05.1. - Reserved."
         }
       ]
     },
@@ -1722,36 +1722,5 @@
         }
       ]
     }
-  ],
-  "codification": {
-    "editors_note_verbatim": "Printed herein is the Charter of the City of Copperas Cove, as adopted by the city council on May 18, 2010, by section 3 of Ordinance No. 2010-21. Amendments to the charter are indicated by parenthetical history notes following amended provisions. The absence of a history note indicates that the provision remains unchanged from the original charter. Obvious misspellings have been corrected without notation. For stylistic purposes, a uniform system of headlines, catchlines and citations to state statutes has been used, and capitalization has been conformed for consistency. Additions made for clarity are indicated by brackets, and footnotes have been inserted by the editor.",
-    "source": "Municode charter-level editor's note, captured from the saved table of contents page",
-    "captured_at": "2026-09-05T17:44:41.223Z",
-    "verification_status": "VERIFIED",
-    "adopted_by_council": "2010-05-18",
-    "adopting_instrument": "Section 3 of Ordinance No. 2010-21",
-    "what_this_does_and_does_not_establish": "ESTABLISHES: the charter text Municode prints was adopted by the city council on May 18, 2010 by section 3 of Ordinance No. 2010-21. DOES NOT ESTABLISH: that Copperas Cove became a home rule city in 2010, or that this was the original charter. The note describes the charter text incorporated into the code, which is a codification event. The original home rule adoption and its date remain unverified and are tracked separately.",
-    "history_note_rule": "Municode states that amendments are indicated by parenthetical history notes following amended provisions, and that the absence of a history note indicates the provision remains unchanged from the original charter. This is a powerful first-pass filter: sections carrying a history note are the ones needing historical reconstruction. It is Municode's editorial representation, not independent proof, and a missing note is not proof a section never changed.",
-    "editorial_alterations_caveat": "Municode states that obvious misspellings have been corrected without notation, that headlines, catchlines, citations and capitalization have been conformed for consistency, and that additions made for clarity are indicated by brackets. CONSEQUENCE FOR CHANGE DETECTION: a textual difference between two snapshots may be an editorial change made by the codifier rather than a charter amendment approved by voters. This is why every detected difference is written as VERIFICATION REQUIRED and never as an amendment.",
-    "bracket_convention": "Brackets in a section title indicate an editor addition, not charter language. Sec. 3.16 appears as '[Public hearing.]', meaning the codifier supplied that catchline. The brackets are preserved here rather than cleaned, because removing them would present an editor's words as the charter's."
-  },
-  "reserved_sections": {
-    "note": "Current status Reserved is tracked separately from historical content, which is unknown. A section becomes Reserved when earlier text was repealed, relocated or consolidated. Each of these is a research target: what did it say, when did it disappear, and who approved that.",
-    "sections": [
-      "2.12",
-      "3.18",
-      "6.02.2",
-      "7.02",
-      "8.02",
-      "8.03",
-      "8.11",
-      "8.12",
-      "11.03",
-      "11.04",
-      "11.05",
-      "11.06",
-      "11.11",
-      "11.12"
-    ]
-  }
+  ]
 }

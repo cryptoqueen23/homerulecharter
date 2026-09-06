@@ -1,0 +1,17 @@
+{
+  "name": "cove-charter-watch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Independent civic research project tracking changes to the Copperas Cove home rule charter",
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "probe-municode": "node scripts/ingest-municode.mjs --probe",
+    "update-charter": "node scripts/ingest-municode.mjs",
+    "update-charter:dry": "node scripts/ingest-municode.mjs --dry-run",
+    "import-charter": "node scripts/import-text.mjs",
+    "diff-charter": "node scripts/diff-snapshots.mjs"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
